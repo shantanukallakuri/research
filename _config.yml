@@ -86,29 +86,29 @@ analytics:
 author:
   name             : "Shantanu Kallakuri"
   avatar           : "profile.png"
-  bio              : "Data Scientist"
-  location         :
-  employer         :
-  pubmed           :
-  orcid            : "http://orcid.org/0000-0001-9259-3883"
-  googlescholar    : "https://scholar.google.com/citations?user=fiaPSmgAAAAJ"
-  email            : "rob.williams@wustl.edu"
-  researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
-  uri              :
+  bio              : "Materials Science & Engineering Researcher"
+  location         : "Santa Clara, CA"
+  employer         : "Cornell University"
+  pubmed           : 
+  orcid            : "https://orcid.org/0000-0002-9809-6690"
+  googlescholar    : "https://scholar.google.com/citations?user=sQuyU90AAAAJ&hl=en"
+  email            : "sk3269@cornell.edu"
+  researchgate     : "https://www.researchgate.net/profile/Shantanu-Kallakuri"
+  uri              : 
   bitbucket        :
   codepen          :
   dribbble         :
   flickr           :
-  facebook         :
+  facebook         : 
   foursquare       :
-  github           : "jayrobwilliams"
-  gitlab           : "jayrobwilliams"
+  github           : "shantanukallakuri"
+  gitlab           : "shantanukallakuri"
   google_plus      :
   keybase          :
-  instagram        :
+  instagram        : "shantanukallakuri"
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         :
+  linkedin         : "https://www.linkedin.com/in/shantkall/"
   mastodon         : 
   pinterest        :
   soundcloud       :

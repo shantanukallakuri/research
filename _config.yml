@@ -59,7 +59,7 @@ yandex_site_verification :
 mastodon:
   username               : 
 twitter:
-  username               : "https://x.com/shantanuk100"
+  username               : "shantanuk100"
 facebook:
   username               :
   app_id                 :
@@ -115,7 +115,7 @@ author:
   stackoverflow    : #"https://stackoverflow.com/users/10912314/jayrobwilliams"
   steam            :
   tumblr           :
-  twitter          : "https://x.com/shantanuk100"
+  twitter          : "shantanuk100"
   vine             :
   weibo            :
   xing             :

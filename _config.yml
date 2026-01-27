@@ -57,9 +57,9 @@ yandex_site_verification :
 
 # Social Sharing
 mastodon:
-  username               : "fosstodon.org/@jayrobw"
-twitter:
   username               : 
+twitter:
+  username               : "https://x.com/shantanuk100"
 facebook:
   username               :
   app_id                 :

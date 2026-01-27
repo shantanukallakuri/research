@@ -86,7 +86,7 @@ analytics:
 author:
   name             : "Shantanu Kallakuri"
   avatar           : "profile.png"
-  bio              : "Materials Science & Engineering Researcher"
+  bio              : "Researcher in Materials Science & Engineering"
   location         : "Santa Clara, CA"
   employer         : "Cornell University"
   pubmed           : 
@@ -112,7 +112,7 @@ author:
   mastodon         : 
   pinterest        :
   soundcloud       :
-  stackoverflow    : #"https://stackoverflow.com/users/10912314/jayrobwilliams"
+  stackoverflow    : "https://stackoverflow.com/users/11599445/shantanuk100?tab=profile"
   steam            :
   tumblr           :
   twitter          : "https://x.com/shantanuk100"
@@ -260,7 +260,7 @@ sass:
 permalink: /:categories/:title/
 # paginate: 5 # amount of posts to show
 # paginate_path: /page:num/
-timezone: America/Chicago # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: America/Los_Angeles # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins

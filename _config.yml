@@ -105,17 +105,17 @@ author:
   gitlab           : "shantanukallakuri"
   google_plus      :
   keybase          :
-  instagram        : "https://www.instagram.com/shantanukallakuri"
+  instagram        : "shantanukallakuri"
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         : "https://www.linkedin.com/in/shantkall/"
+  linkedin         : "in/shantkall/"
   mastodon         : 
   pinterest        :
   soundcloud       :
   stackoverflow    : "https://stackoverflow.com/users/11599445/shantanuk100?tab=profile"
   steam            :
   tumblr           :
-  twitter          : "https://x.com/shantanuk100"
+  twitter          : "shantanuk100"
   vine             :
   weibo            :
   xing             :
@@ -245,6 +245,14 @@ defaults:
   - scope:
       path: ""
       type: talks
+    values:
+      layout: talk
+      author_profile: true
+      share: true
+  # _other_interests
+  - scope:
+      path: ""
+      type: other_interests
     values:
       layout: talk
       author_profile: true

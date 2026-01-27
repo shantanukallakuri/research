@@ -101,7 +101,7 @@ author:
   flickr           :
   facebook         : 
   foursquare       :
-  github           : [metadata]
+  github           : "shantanukallakuri"
   gitlab           : "shantanukallakuri"
   google_plus      :
   keybase          :
@@ -245,14 +245,6 @@ defaults:
   - scope:
       path: ""
       type: talks
-    values:
-      layout: talk
-      author_profile: true
-      share: true
-  # _other_interests
-  - scope:
-      path: ""
-      type: other_interests
     values:
       layout: talk
       author_profile: true

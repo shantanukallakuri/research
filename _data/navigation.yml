@@ -17,3 +17,10 @@ main:
     
   - title: "CV"
     url: /cv/
+
+  - title: "Other Interests"
+    url: /otherinterests/
+
+  - title: "Resources"
+    url: /resources/
+    

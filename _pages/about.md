@@ -1,26 +1,21 @@
 ---
 permalink: /
 title: "About me"
-excerpt: "About me"
+excerpt: "About"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-Hello and welcome! I am a researcher with primary interests in bottom-up materials approaches. My primary interests lie in building materials, their synthesis protocols, cross-linking them, and functionalizing them. This is a wide research space, and my primary focus is on building these materials for purposes of electronics, optics, and quantum applications. the [Data-driven Analysis of Peace Project](https://dapp-lab.org) and a research collaborator with the [Research on International Policy Implementation Lab](https://bridgingthegapproject.org/ripil).
-
-I earned my PhD in Political Science from the [University *of* North Carolina *at* Chapel Hill](https://www.unc.edu) and my BA in Political Science from [Haverford College](https://www.haverford.edu). My academic work has been [published](publications) in the *American Political Science Review*, *International Studies Quarterly*, *Conflict Management and Peace Science*, and *Political Science Research and Methods*, among other outlets. This [research](research) explores the causes and consequences of political violence using a broad variety of methods such as latent variable models, geospatial analysis, and big data. I have [taught](teaching) quantitative methodology and international relations, and am a certified instructor with.
-
-
-
-<p style="font-size:30px; color:#000000;"><i>Research portfolio:</i></p>
 
 ## 1. Background
 ### 1.1 About
-Hello! Thanks for taking the time to be here!<br/>
+Hello! Thanks for being here!<br/>
 I'm Shantanu Kallakuri, a recent graduate of <b>[Cornell University](https://en.wikipedia.org/wiki/Cornell_University)</b> and previously <b>[BITS Pilani](https://en.wikipedia.org/wiki/BITS_Pilani)</b>. I am presently a Senior Process Engineer at <b>[Applied Materials](https://en.wikipedia.org/wiki/Applied_Materials)</b> - Santa Clara, working on advancing Plasma-enhanced Atomic Layer Deposition <b>[(PE-ALD)](https://en.wikipedia.org/wiki/Atomic_layer_deposition)</b> for next-generation <b>[semiconductor nodes](https://en.wikipedia.org/wiki/List_of_semiconductor_scale_examples)</b> on <b>[emergent transistor devices](https://en.wikipedia.org/wiki/Multigate_device)</b> - the tiny little electrical switches that form the foundation of all modern electronics today. For further details on my research and interests please refer to my <a href="https://drive.google.com/file/d/1yLjLC1fJG19sDglDySFTeqL23UA6moK7/view" title="CV" target="_blank"><b>CV</b></a>, <b>[publications](https://scholar.google.com/citations?user=sQuyU90AAAAJ&hl=en)</b>, <b>[patents](https://patents.google.com/?inventor=shantanu+kallakuri&oq=shantanu+kallakuri)</b>, and <b>[book chapter](https://www.appleacademicpress.com/functionalized-engineering-materials-and-their-applications-/9781771885232)</b>.
 <br/><br/>
+
+<!-- <p style="font-size:30px; color:#000000;"><i>Research portfolio:</i></p> -->
 
 ### 1.2 Governing Tenets
 My research is deeply influenced by my personal values and interests. I love to build things - through synthesis, code, and simulation, am passionate about protecting the planet, and seek to leverage my knowledge and resources in developing systems that support society. Principles central to this approach I feel are energy efficiency, waste reduction, and sustainability. These motives have driven me to explore fields where I can apply my love for Chemistry, Physics, and Materials Science, particularly in synthesis and molecular design. Consequently, I am a strong proponent for scalable systems that minimize consumption and maximize utility. My past research has been strongly multi-disciplinary and I hope to continue along the same lines, since achieving these lofty objectives necessitates multidisciplinary science and engineering approaches so we can create comprehensive end-to-end material cycles and avoid a future filled with insidious materials like polythene (Plus it's more fun to do things together!). I thus seek to align my research in coherence with all these ideas.<br/><br/>

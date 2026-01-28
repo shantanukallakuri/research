@@ -1,8 +1,11 @@
 # main links links
 main:
+  - title: "About me"
+    url: /
+
   - title: "Publications"
     url: /publications/
-    
+
   - title: "Research"
     url: /research/
 
@@ -18,7 +21,7 @@ main:
   - title: "CV"
     url: /cv/
 
-  - title: "Other Interests"
+  - title: "Other interests"
     url: /otherinterests/
 
   - title: "Resources"

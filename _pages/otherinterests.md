@@ -1,11 +1,11 @@
 ---
-permalink: /
-title: "About me"
-excerpt: "About me"
+permalink: /otherinterests/
+title: "Other interests"
+excerpt: "Other interests"
 author_profile: true
 redirect_from: 
-#  - /about/
-#  - /about.html
+  - /otherinterests/
+  - /otherinterests.html
 ---
 
 Welcome! I am a data scientist applying machine learning tools and causal

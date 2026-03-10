@@ -27,4 +27,5 @@ group :jekyll_plugins do
   gem 'tzinfo', '~> 1.2'
   gem 'tzinfo-data', platforms: [:windows]
   gem 'bigdecimal'
+  gem 'fiddle'
 end

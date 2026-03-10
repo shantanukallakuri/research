@@ -64,7 +64,7 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 : profile.png # Open Graph/Twitter default site image
+og_image                 : profile.jpg # Open Graph/Twitter default site image
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
@@ -85,8 +85,8 @@ analytics:
 # Site Author
 author:
   name             : "Shantanu Kallakuri"
-  avatar           : "profile.png"
-  bio              : "Researcher in Materials Science & Engineering"
+  avatar           : "profile.jpg"
+  bio              : "Materials Science & Engg. | Applied Materials | Cornell University | BITS Pilani"
   location         : "Santa Clara, CA"
   employer         : "Cornell University"
   pubmed           : 

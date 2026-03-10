@@ -7,11 +7,11 @@ header:
   og_image: "research/ecdf.png"
 ---
 
-My research inclincations lie within two areas: 1) leveraging bottom-up approaches to develop quantum materials, and 2) comprehending the underlying physics of spin, charge, and light in such materials to harness them in a fast, efficient, scalable manner.
+My research inclincations lie within two areas: 1) leveraging bottom-up approaches to develop quantum materials, and 2) comprehending the underlying physics of spin, charge, and light in such materials to harness them in a fast, efficient, scalable manner. 
 
-Materials that I find interesting include - Diamond, SiC, hBN, AlN/GaN, and SiN/SiOx/AlOx.
+Materials I am interested in are SiC, Diamond, hBN, TMDs, Graphene and AlN/GaN.
 
-In a new avenue of research, I leverage social media data to explore participation in extremist movements across multiple contexts, gaining insight into the early stages of radicalization.
+Here is some research I have recently been involved me. It spans diverse material systems, primarily focused on fast and energy-efficient electronic and photonic applications.
 
 <!-- <div style="margin-top: 50px;"></div> -->
 
@@ -26,13 +26,6 @@ In a new avenue of research, I leverage social media data to explore participati
 <div style="clear: both;"></div>
 
 ## 2. Applications
-Research I am involved in has primarily been on:<br />
-1) Energy-efficient electronic / optic / photonic devices<br />
-2) Self-assembled fibers & thin-films with exotic properties like symmetry / chirality / magnetism<br />
-3) Self-assembled fibers to remedy heavy-metals like Arsenic and Lead from groundwater<br />
-4) Nanomotors for inexpensive point-of-care viral diagnostic microfluidic chips in developing nations &<br />
-5) Dye sensitized solar cells and electron donor-acceptor systems
-
 New research I constantly read and ideate about are an unending list in Chemistry, Physics and Biology. Of particular interest to me though are functional, scalable, programmable materials pertaining to semiconductors, computing, and energy that can be made using novel chemistry and materials science.
 <br/><br/>
 

@@ -8,14 +8,27 @@ header:
   og_image: "research/chiral-materials.jpg"
 ---
 
-In this research I ask why some rebel groups fight for secession and independence, while others are willing to use violence to secure more autonomy and self-governance within an existing state. I argue that because rebel groups are strategic actors, they realize that military victory or plebiscite is not the end of their political struggle; if they gain independence, they must then create a new state. States are territorial entities, and so the trajectory of any new state will be greatly influenced by the resources and challenges its territory holds. Knowing this, rebel groups whose territory is more conducive to governance and administration will push for independence, while groups whose territory is less suited will fight for autonomy within the state. However, governments are aware of which groups inhabit territories most suitable to secession and employ various measures to try and stop these conflicts before they can begin, such as China’s pervasive electronic tracking of Uyghur citizens in Xinjiang.
+In this research my post-doc Haixiang Han and I along with other team members, ask how we can assemble chirality in a structural and hierarchical manner irrespective of the chirality of the starting components. Our proposition and proof-of-concept is that, 
 
-To test these arguments, I focus on rebel movements tied to ethnic groups with defined homelands. By doing so, I am able to exploit geospatial data on population and government activity to compare the governability of subnational territories cross-nationally. I also explore the temporal dynamics of these phenomena in smaller scale studies focusing on different government preemption tactics. I explore how states actually conduct this surveillance of their populations, using an agent-based model to predict when these monitoring efforts are likely to fail. Such simulation based approaches help us understand the role that information and communication technology can play in helping governments main control of restive regions.
+<!-- In this research I ask why, while-->
+<!-- I argue that, they realize that; if they, they must --> 
+<!-- States are territorial entities, and so the trajectory of will be influenced by the -->
+<!-- Knowing this, will push for, while groups whose will -->
+<!-- However, are aware of and employ various measures to, such as -->
+
+<!-- To test these arguments, I focus on -->
+<!-- By doing so, I am able to exploit -->
+<!-- I also explore the temporal dynamics of -->
+<!-- I explore how actually conduct using an __ __model to predict when likely to-->
+<!-- Such simulation based approaches help us understand the role that can play-->
 
 ## Article
 
-Rob Williams. "Turning the Lights on to Keep Them in the Fold: How Governments Preempt Secession Attempts." *Conflict management and Peace Science*.
+H. Han, S. Kallakuri et. al. "Multiscale hierarchical structures from a nanocluster mesophase" *Nature Materials, volume 21, pages 518–525 (2022)*.
 
-> There are many regions that meet the necessary conditions for sovereign governance in the world, but few secessionist conflicts. I argue that this relative paucity of secessionist violence is the result of government preemption of potential secessionist movements. Using cross-national geospatial data from 1992 to 2013, I find that governments invest more, measured via nighttime light emissions, in more secession-prone regions. The same factors that make territory attractive for secession, such as large populations and international borders, also make governments willing to work to retain control of that territory, contributing to the scarcity of separatist civil conflicts.
+> Spontaneous hierarchical self-organization of nanometre-scale subunits into higher-level complex structures is ubiquitous in nature. The creation of synthetic nanomaterials that mimic the self-organization of complex superstructures commonly seen in biomolecules has proved challenging due to the lack of biomolecule-like building blocks that feature versatile, programmable interactions to render structural complexity. In this study, highly aligned structures are obtained from an organic–inorganic mesophase composed of monodisperse Cd37S18 magic-size cluster building blocks. Impressively, structural alignment spans over six orders of magnitude in length scale: nanoscale magic-size clusters arrange into a hexagonal geometry organized inside micrometre-sized filaments; self-assembly of these filaments leads to fibres that then organize into uniform arrays of centimetre-scale bands with well-defined surface periodicity. Enhanced patterning can be achieved by controlling processing conditions, resulting in bullseye and ‘zigzag’ stacking patterns with periodicity in two directions. Overall, we demonstrate that colloidal nanomaterials can exhibit a high level of self-organization behaviour at macroscopic-length scales.
 
-[Article](https://doi.org/10.1177/07388942211015242){: .btn--research} [Preprint](/files/pdf/research/Turning the Lights on.pdf){: .btn--research} [Supplemental Information](/files/pdf/research/Turning the Lights on SI.pdf){: .btn--research} [Replication Archive](https://journals.sagepub.com/doi/suppl/10.1177/07388942211015242){: .btn--research} [GitHub Repo](https://github.com/jayrobwilliams/conflict-preemption){: .btn--research} [Poster](/files/pdf/research/PSS 2018 Poster.pdf){: .btn--research}
+[Article](https://doi.org/10.1038/s41563-022-01223-3){: .btn--research} [Publication](/files/pdf/research/2022 - Multiscale hierarchical structures from a nanocluster mesophase.pdf){: .btn--research} [Supplemental Information](/files/pdf/research/2022 - Multiscale hierarchical structures from a nanocluster mesophase - SI.pdf){: .btn--research}
+
+<!-- [Article](https://doi.org/10.1177/07388942211015242){: .btn--research} [Preprint](/files/pdf/research/Turning the Lights on.pdf){: .btn--research} [Supplemental Information](/files/pdf/research/Turning the Lights on SI.pdf){: .btn--research} [Replication Archive](https://journals.sagepub.com/doi/suppl/10.1177/07388942211015242){: .btn--research} [GitHub Repo](https://github.com/jayrobwilliams/conflict-preemption){: .btn--research} [Poster](/files/pdf/research/PSS 2018 Poster.pdf){: .btn--research}-->
+

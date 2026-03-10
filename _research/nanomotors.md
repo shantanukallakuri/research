@@ -1,5 +1,5 @@
 ---
-title: "Social media data"
+title: "Motile nanoparticles and Photosensitizers"
 layout: single-portfolio
 excerpt: "<img src='/images/research/motile-nanoparticles.jpg' alt=''>"
 collection: research

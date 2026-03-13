@@ -18,7 +18,7 @@ s
 ## 1. NutritionCode
 <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-
+{% raw %}
 <div class="demo-section">
 <!-- ── Chart-type controls: one dropdown per chart group ── -->
 <div style="margin-bottom:0.8rem; display:flex; flex-wrap:wrap; gap:0.8rem; align-items:center;">
@@ -400,3 +400,4 @@ async function plotNutrition() {
   }
 }
 </script>
+{% raw %}

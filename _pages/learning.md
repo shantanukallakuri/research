@@ -13,6 +13,7 @@ toc_sticky: true
 #  - /blog.html
 ---
 
+<!--
 ## Section One (Test plot - Damped Oscillator Slider)
 <div class="demo-section">
   <h4>Python (Pyodide) — Damped Oscillator (Interactive)</h4>
@@ -99,5 +100,6 @@ oninput="wfOnL(this.value)">
 <div id="wf-debug" style="font-size:0.8rem; color:red; margin-top:0.3rem;"></div>
 </div>
 <script src="/assets/js/hydrogen.js"></script>
+-->
 
 Even more content...

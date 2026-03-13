@@ -13,7 +13,7 @@ toc_sticky: true
 #  - /blog.html
 ---
 
-A space for general non-scientific topics I am interested in:
+A space for general non-scientific topics I am interested in:s
 
 ## 1. NutritionCode
 <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>

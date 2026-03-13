@@ -1,11 +1,11 @@
 ---
 title: "Motile nanoparticles and Photosensitizers"
 layout: single-portfolio
-excerpt: "<img src='/images/research/motile-nanoparticles.jpg' alt=''>"
+excerpt: "<img src='/images/research/photosensitizersandnanomotors.jpg' alt=''>"
 collection: research
 order_number: 40
 header: 
-  og_image: "research/motile-nanoparticles.jpg"
+  og_image: "research/photosensitizersandnanomotors.jpg"
 ---
 
 In these projects I leverage social media data to study the early stages of

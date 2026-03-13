@@ -8,7 +8,8 @@ header:
   og_image: "research/chiral-materials.jpg"
 ---
 
-In this research my post-doc Haixiang Han and I along with other team members, ask how we can assemble chirality in a structural and hierarchical manner irrespective of the chirality of the starting components. Our proposition and proof-of-concept is that, 
+In this research my post-doc Haixiang Han and I along with team members, ask how we can structrally impart chirality into bulk materials starting from an atomic scale in a continuous, unbroken hierarchy. Chirality is essential to both quantum electronic/photonic/magnetic materials as well as fundamental biological building blocks. Our team (along with Curtis Williamson and Doug Nevers) discovered that it is possible to assemble achiral materials such as 
+Our discovery  structural and hierarchical manner irrespective of the chirality of the starting components. Our proposition and proof-of-concept is that, 
 
 <!-- In this research I ask why, while-->
 <!-- I argue that, they realize that; if they, they must --> 

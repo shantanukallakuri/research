@@ -7,11 +7,11 @@ header:
   og_image: "research/ecdf.png"
 ---
 
-My research inclinations lie within two areas: 1) leveraging bottom-up approaches to develop quantum materials with methods to study them, and 2) understanding the underlying physics of spin, charge, and light in such materials to harness them in a fast, efficient, scalable manner. 
+My primary research inclinations lie within two areas: 1) leveraging bottom-up approaches to develop quantum materials with methods to study them, and 2) understanding the underlying physics of spin, charge, and light in such materials to harness them in a fast, efficient, scalable manner. 
 
-Materials I am interested in are SiC, Diamond, hBN, TMDs, Graphene and AlN/GaN.
+Materials I am interested in are Diamond, SiC, hBN, TMDs, Graphene, AlN/GaN, SiO2, SiN in no particular order.
 
-Here is some research I have recently been involved in. It spans diverse material systems, primarily focused on fast and energy-efficient electronic and photonic applications.
+Here is some research I have recently been involved in through my career beginning with more recent to less recent. I have previously endeavored to gain expertise across diverse material systems, and my interest have now focused more within semiconducting/dielectric/superconducting materials.
 
 <!-- <div style="margin-top: 50px;"></div> -->
 

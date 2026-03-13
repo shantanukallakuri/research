@@ -6,11 +6,14 @@ main:
   - title: "research"
     url: /research/
     
-  - title: "publications"
+  - title: "publs./confs.  "
     url: /publications/
 
   - title: "teaching"
     url: /teaching/
+
+  - title: "learning"
+    url: /learning/
 
   - title: "code"
     url: /code/
@@ -20,9 +23,6 @@ main:
     
   - title: "cv"
     url: /cv/
-
-  - title: "motivation"
-    url: /motivation/
 
   - title: "inspirations"
     url: /inspirations/

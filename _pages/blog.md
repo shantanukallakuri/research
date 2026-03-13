@@ -14,7 +14,7 @@ toc_sticky: true
 ---
 
 A space for general non-scientific topics I am interested in: 
-
+s
 ## 1. NutritionCode
 <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>

@@ -13,12 +13,11 @@ toc_sticky: true
 #  - /blog.html
 ---
 
-A space for general non-scientific topics I am interested in: 
+A space for general non-scientific topics I am interested in: s
 
 ## 1. NutritionCode
 <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-{% raw %}
 <div class="demo-section">
 <!-- ── Chart-type controls: one dropdown per chart group ── -->
 <div style="margin-bottom:0.8rem; display:flex; flex-wrap:wrap; gap:0.8rem; align-items:center;">
@@ -85,6 +84,7 @@ A space for general non-scientific topics I am interested in:
 <div id="nutrition-status" style="font-size:0.85rem; color:#555; margin-top:0.5rem;">Loading Python runtime...</div>
 <div id="nutrition-debug" style="font-size:0.8rem; color:red;"></div>
 </div>
+{% raw %}
 <script>
 // ── Colour palettes — one per nutrient group ──
 const PALETTES = {

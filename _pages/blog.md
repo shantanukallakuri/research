@@ -129,7 +129,7 @@ async function loadNutritionPy() {
   }
 
   // Fetch and execute the food database file — defines FOODS and get_chart_data()
-  const foodsCode = await fetch('/assets/py/foods_v2.py').then(r => r.text());
+  const foodsCode = await fetch('{{ "/assets/py/foods_v2.py" | relative_url }}').then(r => r.text());
   await pyodide.runPythonAsync(foodsCode);
 
   // Pull FOODS into JS to build the food selector grid

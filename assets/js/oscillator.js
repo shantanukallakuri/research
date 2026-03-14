@@ -6,7 +6,9 @@ async function loadPy() {
     pyodide = await loadPyodide();
     window.pyodideInstance = pyodide;
   }
-  const pyCode = await fetch('/assets/py/oscillator.py').then(r => r.text());
+  const resp = await fetch('/assets/py/oscillator.py');
+  if (!resp.ok) throw new Error(`Could not load oscillator.py: ${resp.status} ${resp.url}`);
+  const pyCode = await resp.text();
   await pyodide.runPythonAsync(pyCode);
   document.getElementById("pyout").textContent = "Python ready — click Calculate";
   return pyodide;

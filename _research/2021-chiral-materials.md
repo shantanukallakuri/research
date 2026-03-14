@@ -31,5 +31,54 @@ H. Han, S. Kallakuri et. al. "Multiscale hierarchical structures from a nanoclus
 
 [Article](https://doi.org/10.1038/s41563-022-01223-3){: .btn--research} [Publication](/files/pdf/research/2022 - Multiscale hierarchical structures from a nanocluster mesophase.pdf){: .btn--research} [Supplemental Information](/files/pdf/research/2022 - Multiscale hierarchical structures from a nanocluster mesophase - SI.pdf){: .btn--research}
 
+
+## 5. Details of past work
+### 5.1 Research @ Cornell
+
+<u>Advisors</u>: Prof. <b>[Richard Robinson](https://www.engineering.cornell.edu/faculty-directory/richard-douglas-robinson)</b> and Prof. <b>[Tobias Hanrath](https://www.cheme.cornell.edu/faculty-directory/tobias-hanrath)</b><br/>
+
+My interests have led me to pursue an MS with <b>[thesis](https://ecommons.cornell.edu/items/81a31052-98cf-4e4b-986f-2acdd53f106e)</b> at Cornell advised by Prof. Richard Robinson & Prof. Tobias Hanrath where I developed <b>[‘Multiscale hierarchical structures from nanocluster mesophases'](https://www.nature.com/articles/s41563-022-01223-3.epdf?sharing_token=qK0xSPviChGM7xcUPUU6btRgN0jAjWel9jnR3ZoTv0Mlj6L1ihnKIvTL2i9xTkHG6BafGwraN4s7XjNhzTsCkpUcjwSzj93HbnbM7HvIOFPm7m36QhXGbSzyqOPUa8uVHx-UmEPV7zgdeEQzPG_aG1Vi1ErkWx6UOTxHYr54Jic%3D)</b>. This work has been covered to great depth in our recent <b>[Nature Materials](https://www.nature.com/articles/s41563-022-01223-3)</b> paper and in some news outlets that picked up on this work (<b>[Nature Press](https://www.nature.com/articles/s41563-022-01235-z) <span>&#124;</span> [Cornell News](https://news.cornell.edu/stories/2022/04/nanoclusters-self-organize-centimeter-scale-hierarchical-assemblies) <span>&#124;</span> [Phys.org](https://phys.org/news/2022-04-nanoclusters-self-organize-centimeter-scale-hierarchical.html) <span>&#124;</span> [Eurekalert](https://www.eurekalert.org/news-releases/950527) <span>&#124;</span> [Technology.org](https://www.technology.org/2022/04/17/nanoclusters-self-organize-hierarchy/) <span>&#124;</span> [Newswise](https://www.newswise.com/articles/nanoclusters-self-organize-into-centimeter-scale-hierarchical-assemblies) <span>&#124;</span> [Science News](https://sciencenewsnet.in/nanoclusters-self-organize-into-centimeter-scale-hierarchical-assemblies/) <span>&#124;</span> [Nanowerk](https://www.nanowerk.com/nanotechnology-news2/newsid=60396.php) <span>&#124;</span> [Science Springs](https://sciencesprings.wordpress.com/2022/04/14/from-the-cornell-chronicle-nanoclusters-self-organize-into-centimeter-scale-hierarchical-assemblies/) <span>&#124;</span> [NanoTech Now](https://www.nanotech-now.com/news.cgi?story_id=57033)</b>). Super excited to see this platform realize it's potential!
+<br/>
+
+<div style="text-align: center;">
+<img src="../assets/images/pictures/nmat1.png" alt="Hierarchical self-assembly1" width="400" height="600">
+<span style="display:inline-block; width: 10px;"></span>
+<img src="../assets/images/pictures/nmat3.png" alt="Hierarchical self-assembly3" width="400" height="600">
+<p style="font-size:12px; color:#110645;"><b><span style="font-size: 14px; color: #000000;"><u><br/>
+Hierarchy of self-assembly of our magic-sized cluster quantum-dot system.</u></span><i> Images reprinted with permission from article journal and original authors. Citation: Nature Materials, 21(5): 518-525 (2022) : "Multiscale hierarchical structures from a nanocluster mesophase" H. Han, S. Kallakuri, Y. Yao, C. B. Williamson, D. R. Nevers, B. H. Savitzky, R. S. Skye, M. Xu, O. Voznyy, J. Dshemuchadse, L. F. Kourkoutis, S. J. Weinstein, T. Hanrath, R. D. Robinson</i></b></p>
+</div><br/>
+
+<u>Link to MS thesis defense in case it is not viewable below:</u> <b>[Here](https://www.dropbox.com/scl/fi/kichd5dx01smrr645o9p8/MS-M-Exam-Thesis-Defense-Shantanu-Kallakuri.mp4?rlkey=tj8dmz8jkr6wdif9gjhp8qbqh&e=1&st=98ipu85m&dl=0)</b>
+<div style="text-align: center;">
+<div class="container">
+  <iframe width="700" height = "450" src="https://www.dropbox.com/scl/fi/kichd5dx01smrr645o9p8/MS-M-Exam-Thesis-Defense-Shantanu-Kallakuri.mp4?rlkey=tj8dmz8jkr6wdif9gjhp8qbqh&e=1&st=98ipu85m&dl=0"></iframe>
+</div></div>
+<p style="font-size:16px; color:#000000;"><u><a href="https://www.dropbox.com/scl/fi/kichd5dx01smrr645o9p8/MS-M-Exam-Thesis-Defense-Shantanu-Kallakuri.mp4?rlkey=tj8dmz8jkr6wdif9gjhp8qbqh&e=1&st=98ipu85m&dl=0" target="_blank"><b>Video: Final MS Thesis Defense at Cornell University on "Multiscale Hierarchical Structures from a Nanocluster Mesophase"</b></a></u></p>
+
+<!--- https://www.dropbox.com/scl/fi/kichd5dx01smrr645o9p8/MS-M-Exam-Thesis-Defense-Shantanu-Kallakuri.mp4?rlkey=tj8dmz8jkr6wdif9gjhp8qbqh&st=98ipu85m&dl=0>
+
+In this thesis my aim was to create a platform of scalable building blocks that could replicate nature's intricate self-assembly and order (as it beautifully happens in <b>[DNA](https://www.nature.com/articles/d41586-017-07690-y)</b>, <b>[Collagen](https://pubs.acs.org/doi/10.1021/la3048104)</b>, or <b>[photonic structures](https://www.nature.com/articles/nature01941)</b>  in butterfly wings) in a controlled and usable manner. While self-assembly is pretty common, creating macroscale structures from the atomic level is <b>[challenging](https://pubs.rsc.org/en/content/articlelanding/2022/nr/d1nr07814c)</b>, especially across the seven orders of magnitude (nanometer to centimeter), which we successfully achieved in Prof. Richard Robinson’s lab at Cornell. Postdoc Haixiang Han and I led the effort using basic lab chemicals instead of costly semiconductor equipment and lithography techniques, along with their analysis, characterization and simulation.
+
+The key challenge was making a building block that could assemble seamlessly across all scales without disruptions caused by factors like <b>[solvent interactions](https://pubs.acs.org/doi/10.1021/jacs.0c09293)</b>, <b>[surface trap states](https://pubs.acs.org/doi/10.1021/acs.jpclett.7b02193)</b>, <b>[zeta potentials](https://www.sciencedirect.com/topics/pharmacology-toxicology-and-pharmaceutical-science/zeta-potential)</b>, or <b>[grain boundaries](https://www.sciencedirect.com/science/article/pii/S2451929420306586)</b> - all very prevalent in bulk materials. We used quantum dot magic-sized clusters (<1nm) bound with long-tailed lipid ligands to <b>[stabilize surface charge](https://pubs.acs.org/doi/10.1021/cm4000476)</b> and create self-assembling 'lego blocks'. By controlling the structure, functional group chemistry and size of these blocks we were able to create a simple one-pot method where these units self-spontaneously go on to form filamental wires that further auto-assemble into thicker ropes and ultimately into large thin films. The final films retained the individual dots' properties, like optical activity and chirality, with >99% purity and minimal loss.
+<br/><br/>
+
+<div style="text-align: center;">
+<!--- <p><b><i>Hierarchical self-assembly of quantum-dot nanoparticles into defect-free thin-films</i></b></p> -->
+<!--- <iframe width="480" height="350" src="../assets/video/self-assembly.mp4" frameborder="0" allowfullscreen></iframe>-->
+<img src="../assets/images/pictures/nmat2.png" alt="Hierarchical self-assembly2" width="425" height="350">
+<img src="../assets/images/pictures/nmat4.png" alt="Hierarchical self-assembly4" width="425" height="350"><br/>
+<p style="font-size:12px; color:#110645;"><b><span style="font-size: 14px; color: #000000;"><u><br/>
+Optical, chiroptical, isomeric, and organizational properties of our MSC thin-films.</u></span><i> Images reprinted with permission from article journal and original authors. Citation: Nature Materials, 21(5): 518-525 (2022) : "Multiscale hierarchical structures from a nanocluster mesophase" H. Han, S. Kallakuri, Y. Yao, C. B. Williamson, D. R. Nevers, B. H. Savitzky, R. S. Skye, M. Xu, O. Voznyy, J. Dshemuchadse, L. F. Kourkoutis, S. J. Weinstein, T. Hanrath, R. D. Robinson</i></b></p><br/>
+</div>
+
+<div style="text-align: center;">
+<!--- <iframe width="480" height="350" src="../assets/video/self-assembly.mp4" frameborder="0" allowfullscreen></iframe>-->
+<video width="580" height="450" controls allowfullscreen poster="../assets/images/pictures/SA.png">
+  <source src="../assets/video/self-assembly.mp4" type="video/mp4" />
+</video>
+<p style="font-size:12px; color:#110645;"><b><span style="font-size: 14px; color: #000000;"><u><br/>
+Some MD simulations I had done on LAMPPS & Python with soft potentials to understand ordering of our QD magic-sized clusters.</u></span><i> Video used with permission from article journal and original authors. Citation: Nature Materials, 21(5): 518-525 (2022) : "Multiscale hierarchical structures from a nanocluster mesophase" H. Han, S. Kallakuri, Y. Yao, C. B. Williamson, D. R. Nevers, B. H. Savitzky, R. S. Skye, M. Xu, O. Voznyy, J. Dshemuchadse, L. F. Kourkoutis, S. J. Weinstein, T. Hanrath, R. D. Robinson</i></b></p><br/>
+</div>
+
 <!-- [Article](https://doi.org/10.1177/07388942211015242){: .btn--research} [Preprint](/files/pdf/research/Turning the Lights on.pdf){: .btn--research} [Supplemental Information](/files/pdf/research/Turning the Lights on SI.pdf){: .btn--research} [Replication Archive](https://journals.sagepub.com/doi/suppl/10.1177/07388942211015242){: .btn--research} [GitHub Repo](https://github.com/jayrobwilliams/conflict-preemption){: .btn--research} [Poster](/files/pdf/research/PSS 2018 Poster.pdf){: .btn--research}-->
 

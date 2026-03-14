@@ -13,7 +13,7 @@ toc_sticky: true
 #  - /blog.html
 ---
 
-A pretty random space for general scientific and non-scientific topics I am interested in:
+A pretty random space for general scientific and non-scientific topics and practice code I am working on:
 
 ## 1. NutritionCode
 <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>

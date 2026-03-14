@@ -17,35 +17,31 @@ async function wfLoadPy() {
 
 let wfPyodideReady = wfLoadPy();
 
-// called when n slider moves — update n display, clamp l max, then plot
-function wfOnN(val) {
+// called from oninput on n slider
+window.wfOnN = function(val) {
   const n = parseInt(val);
   document.getElementById("wf-nVal").textContent = n;
-
-  // update l slider max to n-1
   const lSlider = document.getElementById("wf-lInput");
   lSlider.max = n - 1;
-
-  // if current l exceeds new max, pull it down
   const l = parseInt(lSlider.value);
   if (l > n - 1) {
     lSlider.value = n - 1;
     document.getElementById("wf-lVal").textContent = n - 1;
   }
-
   wfDebouncePlot();
-}
+};
 
-// called when l slider moves — just update display and plot
-function wfOnL(val) {
+// called from oninput on l slider
+window.wfOnL = function(val) {
   document.getElementById("wf-lVal").textContent = parseInt(val);
   wfDebouncePlot();
-}
+};
 
-function wfDebouncePlot() {
+// called from onchange on radio buttons
+window.wfDebouncePlot = function() {
   clearTimeout(wfDebounceTimer);
   wfDebounceTimer = setTimeout(wfRunCalc, 80);
-}
+};
 
 async function wfRunCalc() {
   const debug = document.getElementById("wf-debug");
@@ -56,7 +52,7 @@ async function wfRunCalc() {
     const l        = parseInt(document.getElementById("wf-lInput").value);
     const plotType = document.querySelector('input[name="wf-plottype"]:checked').value;
 
-    // --- radial plot ---
+    // radial plot
     const result = await pyodide.runPythonAsync(
       `hydrogen_radial(${n}, ${l}, "${plotType}")`
     );
@@ -89,19 +85,19 @@ async function wfRunCalc() {
       margin: { t: 45, l: 50, r: 20, b: 50 }
     });
 
-    // --- orbital shape plot ---
+    // orbital shape plot
     const orbResult = await pyodide.runPythonAsync(
       `hydrogen_orbital_slice(${n}, ${l})`
     );
     const [xGrid, zGrid, psiGrid, orbLabel] = orbResult.toJs();
 
-    // flatten nested JS maps from .toJs() into plain 2D arrays
-    const xArr = Array.from(xGrid);
-    const zArr = Array.from(zGrid);
+    const xArr   = Array.from(xGrid);
+    const zArr   = Array.from(zGrid);
     const psiArr = Array.from(psiGrid).map(row => Array.from(row));
 
     Plotly.react('wf-orbital', [{
-      x: xArr, z: zArr,
+      x: xArr,
+      y: zArr,
       z: psiArr,
       type: 'heatmap',
       colorscale: 'RdBu',

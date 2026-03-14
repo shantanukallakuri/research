@@ -1,4 +1,5 @@
 let sliderDebounceTimer = null;
+
 async function sliderLoadPy() {
   let pyodide;
   if (window.pyodideInstance) {
@@ -13,11 +14,14 @@ async function sliderLoadPy() {
   sliderRunCalc();
   return pyodide;
 }
+
 let sliderPyodideReady = sliderLoadPy();
-function sliderDebouncePlot() {
+
+window.sliderDebouncePlot = function() {
   clearTimeout(sliderDebounceTimer);
   sliderDebounceTimer = setTimeout(sliderRunCalc, 80);
-}
+};
+
 async function sliderRunCalc() {
   const debug = document.getElementById("slider-debug");
   const pyout = document.getElementById("slider-pyout");

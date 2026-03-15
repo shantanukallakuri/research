@@ -2,40 +2,29 @@
 permalink: /teaching/
 title: "Teaching"
 ---
-<!--
-Research plays a central role in my teaching as students improve their
-analytical skills and master the tools of data analysis through hands-on
-experience. I have taught undergraduate courses on political violence and
-statistical methodology. While at UNC, I taught the graduate statistics lab for
-Advanced Topics in Political Data Science, where my work was recognized by the
-Political Science Department's Earle Wallace Award for Graduate Student
-Teaching. I also served as a teaching assistant for courses in international
-relations and American politics at UNC, in addition to the ICPSR Summer Program
-where I was a teaching assistant for a course on Bayesian modeling in the social
-sciences. I am also a
-[certified instructor](https://carpentries.org/instructors/#jayrobwilliams) with
-[The Carpentries](https://carpentries.org/), which develops evidence-based
-methods for teaching "essential data and computational skills for conducting
-efficient, open, and reproducible research."
 
+Teaching is important to me for various reasons, especially due to the central impact it has in bringing about collective harmonious progress among people. My initiative [chemystery.org](https://www.chemystery.org/) was also born out of this motivation -- in an attempt to become a reference of sorts for scientific concepts that are difficult to understand while sparking curiosity to learn more within those spaces. As such, I will venture to present both these sites in a concise and simple form. 
 
-You can view my teaching portfolio [here](/files/pdf/teaching/Portfolio.pdf).
-You can find a selection of my teaching materials, including all of the labs
-from Advanced Topics in Political Data Science, [here](/teaching-materials).
+I love materials. They have been my daily bread and butter ever since I started playing with various chemicals at home. This natural inlincation has taken deep roots and as a result, I love to learn and share about them. I am passionate in helping the next generations understand their value and provide them an avenue for informed decision-making.
 
-## Washington University in St. Louis
-- Pol Sci 3090: The Scientific Study of Civil War (Spring 2020)
-    - [Syllabus](/files/pdf/teaching/PS 3090 Syllabus.pdf)
-- Pol Sci 3171: International Conflict Management & Resolution (Fall 2019)
-    - [Syllabus](/files/pdf/teaching/PS 3171 Syllabus.pdf)
+Visual learning plays a big role in fundamental learning, I will be making heavy use of illustrations, charts and plots in these webpages. 
 
-## The University of North Carolina at Chapel Hill
-- Poli 281: Quantitative Research in Political Science (Spring 2019)
-    - [Syllabus](/files/pdf/teaching/POLI 281 Syllabus.pdf)
-- Poli 891: Lab for Advanced Topics in Political Data Science (Fall 2017, Fall 2018)
-    - [Syllabus](/files/pdf/teaching/POLI 891 Syllabus.pdf)
+I have been a teaching assistant for various courses as a graduate student in Cornell, and have engaged with high-school students to conduct crash courses in engineering and materials science at [Expanding your horizons](https://www.eyh.cornell.edu/), [Make a difference](https://www.makeadiff.in/). 
 
-## ICPSR Summer Program
-- Introduction to Applied Bayesian Modeling (Summer 2017)
-    - [Syllabus](/files/pdf/teaching/bayes2017.pdf)
--->
+<!-- You can view my teaching portfolio [here](/files/pdf/teaching/Portfolio.pdf). You can find a selection of my teaching materials, including all of the labs from Advanced Topics in Political Data Science, [here](/teaching-materials).-->
+
+## Cornell University. Ithaca, NY, USA
+- MSE5860: *Atomic Structure* (Spring 2021)
+    - [Course Link](https://www.coursicle.com/cornell/courses/MSE/5860/)
+- MSE4330: *Materials for Energy Production, Storage and Conversion* (Fall 2018)
+    - [Course Link](https://classes.cornell.edu/browse/roster/SP26/class/MSE/4330)
+- ENGRG1060: *Exploration in Engineering* (Summer 2019)
+    - [Course Link](https://classes.cornell.edu/browse/roster/SU19/class/ENGRG/1060)
+
+## Expanding your horizons (EYH), Ithaca, NY, USA
+- Intro to Engineering: Conducted a summer-course crash course involving both academics and an experimental lab component for graduating high-school students (2014-2016)
+    - [Link](https://www.eyh.cornell.edu/)
+
+## Made a Difference, Hyderabad and Bangalore, India
+- Chemistry: Taught 2 batches of high-school students for a summer course (2014-2016)
+    - [Link](https://www.makeadiff.in/)

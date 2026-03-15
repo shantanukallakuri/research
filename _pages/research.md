@@ -11,7 +11,7 @@ My primary research inclinations lie within two areas: 1) leveraging bottom-up a
 
 I am interested in the following materials in no particular order: Diamond, SiC, hBN, TMDs, Graphene, AlN/GaN, SiO2, SiN
 
-Here is some research I have recently been involved in beginning with most recent to less recent. I have endeavored to gain expertise across diverse material systems, and my interests are now more focused within semiconducting/dielectric/superconducting materials.
+Here is some research I have recently been involved in beginning with most recent to less recent. While I have endeavored to gain expertise across diverse material systems, my interests now are more focused within semiconducting/dielectric/superconducting materials.
 
 <!-- <div style="margin-top: 50px;"></div> -->
 

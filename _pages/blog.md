@@ -13,10 +13,10 @@ toc_sticky: true
 #  - /blog.html
 ---
 
-A pretty random space for general scientific and non-scientific topics and practice code I am working on:
+A pretty random space for general non-scientific topics:
+<script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
 <!-- <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> -->
-<script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
 
 ## 1. NutritionCode
 <div class="demo-section">

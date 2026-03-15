@@ -14,17 +14,17 @@ I have been a teaching assistant for various courses as a graduate student in Co
 <!-- You can view my teaching portfolio [here](/files/pdf/teaching/Portfolio.pdf). You can find a selection of my teaching materials, including all of the labs from Advanced Topics in Political Data Science, [here](/teaching-materials).-->
 
 ## Cornell University. Ithaca, NY, USA
-- MSE5860: *Atomic Structure* (Spring 2021)
+- Teaching Assistant, MSE5860: *Atomic Structure* (Spring 2021)
     - [Course Link](https://www.coursicle.com/cornell/courses/MSE/5860/)
-- MSE4330: *Materials for Energy Production, Storage and Conversion* (Fall 2018)
+- Teaching Assistant (Grader), MSE4330: *Materials for Energy Production, Storage and Conversion* (Fall 2018)
     - [Course Link](https://classes.cornell.edu/browse/roster/SP26/class/MSE/4330)
-- ENGRG1060: *Exploration in Engineering* (Summer 2019)
+- Teaching Assistant, ENGRG1060: *Exploration in Engineering* (Summer 2019)
     - [Course Link](https://classes.cornell.edu/browse/roster/SU19/class/ENGRG/1060)
 
 ## Expanding your horizons (EYH), Ithaca, NY, USA
-- Intro to Engineering: Conducted a summer-course crash course involving both academics and an experimental lab component for graduating high-school students (2014-2016)
+- Teaching Assistant, Intro to Engineering: Conducted a summer-course crash course involving both academics and an experimental lab component for graduating high-school students (2014-2016)
     - [Link](https://www.eyh.cornell.edu/)
 
 ## Made a Difference, Hyderabad and Bangalore, India
-- Chemistry: Taught 2 batches of high-school students for a summer course (2014-2016)
+- Course Mentor, Chemistry: Taught 2 batches of high-school students for a summer course (2014-2016)
     - [Link](https://www.makeadiff.in/)

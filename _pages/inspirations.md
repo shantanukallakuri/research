@@ -13,6 +13,10 @@ header:
 ---
 <br/>
 
+I have on multiple occasions found it hard to have a single point of reference for certain things, be it for simple things like nutritional values, or something more complicated like quantum mechanics and quantum chemistry (where there are innumerable wonderful books and courses, but it's harder to find a website with concepts in say a single paragraph or half a page). This often causes information overload, overwhelms us with content, and is often hard to find as well.
+
+This website as such is similar to Chemystery.org, going to endeavor to present my learnings (while archiving them in a repository), in a relatively simple form. All feedback on topics you would like to see, or feedback and criticism you may have is welcome.
+
 My research is deeply influenced by my values and interests. I love building things: through synthesis, code, and simulation. My passions lie in protecting the planet, and I seek to leverage my knowledge, experience, and resources into developing transformative technologies that can uplift society. Principles central to this approach I feel are energy efficiency, waste reduction, and sustainability. These motives have driven me to explore fields where I can apply my love for Chemistry, Physics, and Materials Science, particularly in synthesis and molecular design. 
 
 Consequently, I am a strong proponent for scalable systems that minimize consumption and maximize utility. My past research has been strongly multi-disciplinary and I hope to continue along the same lines, since achieving these lofty objectives necessitates multidisciplinary science and engineering approaches so we can create comprehensive end-to-end material cycles and avoid a future filled with insidious materials like polythene (Plus it's more fun to do things together!). I thus seek to align my research in coherence with all these ideas.<br/><br/>

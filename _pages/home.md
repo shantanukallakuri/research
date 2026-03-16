@@ -1,12 +1,12 @@
 ---
 layout: archive
-title: "About me"
-excerpt: "About"
+title: "Home"
+excerpt: "Home"
 permalink: /
 author_profile: true
 redirect_from: 
-  - /about/
-  - /about.html
+  - /home/
+  - /home.html
 ---
 Hello, thanks for being here! This website is my personal research portfolio. If you are looking for my more general fun science education page, please check out <b>[chemystery.org](https://chemystery.org)</b> where I discuss things I have been learning about. Feedback, inquiry, criticism is always welcome! For more details on my work please refer to my <a href="https://drive.google.com/file/d/1rir6F86tcwypaY2Q8Ccf1og0CSf4y94z/view?usp=drive_link" title="CV" target="_blank"><b>CV</b></a>, <b>[publications](https://scholar.google.com/citations?user=sQuyU90AAAAJ&hl=en)</b>, <b>[patents](https://patents.google.com/?inventor=shantanu+kallakuri&oq=shantanu+kallakuri)</b>, and <b>[book chapters](https://www.appleacademicpress.com/functionalized-engineering-materials-and-their-applications-/9781771885232)</b>.
 

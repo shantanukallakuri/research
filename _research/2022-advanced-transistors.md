@@ -1,5 +1,5 @@
 ---
-title: "Advanced node transistors"
+title: "Advanced-node FET/HEMT transistors"
 layout: single-portfolio
 excerpt: "<img src='/images/research/gaafethemt.jpg' alt=''>"
 collection: research

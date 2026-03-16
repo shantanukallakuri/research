@@ -100,9 +100,6 @@ oninput="wfOnL(this.value)">
 <div id="wf-debug" style="font-size:0.8rem; color:red; margin-top:0.3rem;"></div>
 </div>
 <script src="/assets/js/hydrogen.js"></script>
--->
-<script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 
 ## 2. Oscillator
@@ -123,7 +120,11 @@ Damping γ:
 </div>
 <script src="/assets/js/oscillator.js"></script>
 
-## 3. Damped Oscillator
+-->
+<script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+## 1. Damped Oscillator (Test plot)
 <div class="demo-section">
 <h4>Python (Pyodide) — Damped Oscillator (Interactive)</h4>
 <div style="margin-bottom:0.8rem;">
@@ -141,7 +142,7 @@ oninput="document.getElementById('slider-gammaVal').textContent=parseFloat(this.
 </div>
 <script src="/assets/js/oscillator-slider.js"></script>
 
-## 4. Hydrogen Atom Wave Functions
+## 2. Hydrogen Atom Wave Functions
 
 <div class="demo-section">
 <h4>Python (Pyodide) — Hydrogen Orbitals</h4>

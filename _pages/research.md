@@ -7,7 +7,7 @@ header:
   og_image: "research/ecdf.png"
 ---
 
-My primary research inclinations lie within two areas: 1) leveraging bottom-up approaches to develop quantum materials and methods to study them, and 2) understanding underlying physics of spin, charge, and light in said materials to harness them in a fast, efficient, scalable manner. 
+My research interests primarily lie within two areas: 1) leveraging bottom-up approaches to develop quantum materials and methods to study them, and 2) understanding underlying physics of spin, charge, and light in such materials to harness them in a fast, efficient, scalable manner. 
 
 I am interested in the following materials in no particular order: Diamond, SiC, hBN, TMDs, Graphene, AlN/GaN, SiO2, SiN
 

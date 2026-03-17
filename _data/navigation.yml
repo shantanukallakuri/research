@@ -9,14 +9,14 @@ main:
   - title: "publs./confs.  "
     url: /publications/
 
+  - title: "patents"
+    url: /patents/
+
   - title: "teaching"
     url: /teaching/
 
   - title: "learning"
     url: /learning/
-
-  - title: "code"
-    url: /code/
 
   - title: "blog"
     url: /blog/

@@ -8,37 +8,37 @@ header:
   og_image: "research/gaafethemt.jpg"
 ---
 
-<hr style="border: none; height: 3px; background-color: red; border-top: 4px #4183C4;">
+<hr style="border: none; height: 3px; background-color: #4183C4; border-top: 4px #4183C4;">
 
-<u>Divisions</u>: <b>[ALD, Semiconductor Products Group](https://www.appliedmaterials.com/il/en/about.html)</b> and <b>[Varian Ion Implant Division, Semiconductor Products Group](https://www.appliedmaterials.com/us/en/semiconductor/products/processes/implant.html)</b><br/>
-
-<u>Institution</u>: Applied Materials Inc.<br/>
-
+<u>Units</u>: [Atomic Layer Deposition (ALD)](https://www.appliedmaterials.com/il/en/about.html) & [Varian Ion Implant](https://www.appliedmaterials.com/us/en/semiconductor/products/processes/implant.html) Units, Semiconductor Products Group<br/>
+<u>Institution</u>: Applied Materials Inc., Santa Clara<br/>
 <u>Patents</u>:<br />
+• Techniques based on directional seeding & selective deposition (Part-1: [US11956978B2](https://patentimages.storage.googleapis.com/bd/de/7f/d6d609a1ae24c8/US11956978.pdf))<br />
+• Techniques based on directional seeding & selective deposition (Part-2: [US20240040808A1](https://patentimages.storage.googleapis.com/48/0d/8b/6abf827b301e81/US20240040808A1.pdf))<br />
+• Techniques for void-free material depositions (Part-1: [US11749564B2](https://patentimages.storage.googleapis.com/da/b3/a8/00812c5858a5fa/US11749564.pdf))<br />
+• Techniques for void-free material depositions (Part-2: [US12131948B2](https://patentimages.storage.googleapis.com/18/f8/08/fa282d1176339e/US12131948.pdf))<br />
+• Metal line patterning ([US11404314B2](https://patentimages.storage.googleapis.com/a6/a3/e3/452e123b379037/US11404314.pdf))<br />
+• Devices and methods for variable etch depths ([US20220100078A1](https://patentimages.storage.googleapis.com/b9/06/49/45f22221090201/US20220100078A1.pdf))<br />
+• Techniques for variable deposition profiles ([US20220119955A1](https://patentimages.storage.googleapis.com/89/b3/03/b18c42fe95e177/US20220119955A1.pdf))<br />
 
+<hr style="border: none; height: 3px; background-color: #4183C4; border-top: 4px #4183C4;">
 
-Techniques based on directional seeding and selective deposition, 2024, ([Part-1: US11956978B2](https://patentimages.storage.googleapis.com/bd/de/7f/d6d609a1ae24c8/US11956978.pdf))
+I am a Process Engineer working on developing ultra-thin (<10A) deposition and growth processes for materials in advanced-node transistor (<1.2nm) structures for GAAFET and HEMT applications. Methods I utilize for this are Atomic-layer deposition (ALD), Atomic-layer epitaxy (ALE), and Atomic-layer etch (ALE). 
 
-Techniques based on directional seeding and selective deposition ([Part-2: US20240040808A1](https://patentimages.storage.googleapis.com/48/0d/8b/6abf827b301e81/US20240040808A1.pdf))
-
-Techniques for void-free material depositions, 2023 ([Part-1: US11749564B2](https://patentimages.storage.googleapis.com/da/b3/a8/00812c5858a5fa/US11749564.pdf))
-
-Techniques for void-free material depositions, 2023 ([Part-2: US12131948B2](https://patentimages.storage.googleapis.com/18/f8/08/fa282d1176339e/US12131948.pdf))
-
-Metal line patterning, 2022 ([US11404314B2](https://patentimages.storage.googleapis.com/a6/a3/e3/452e123b379037/US11404314.pdf))
-
-Devices and methods for variable etch depths, 2022 ([US20220100078A1](https://patentimages.storage.googleapis.com/b9/06/49/45f22221090201/US20220100078A1.pdf))
-
-Techniques for variable deposition profiles, 2022 ([US20220119955A1](https://patentimages.storage.googleapis.com/89/b3/03/b18c42fe95e177/US20220119955A1.pdf))
-
-<hr style="border: none; height: 3px; background-color: red; border-top: 4px #4183C4;">
-
-I'm currently a Process Engineer, Senior working on developing materials with lower dielectric constant and their thin-film growth using ALD deposition techniques.   
+Introduction & necessity: Transistor scaling has hit a fundamental quantum limit, leading to the breakdown of Moore's law in today's semiconductor nodes (<2nm). Reasons for this are:<br />
+• Quantum tunneling and leakage<br />
+• Issues in thermal scaling (as each transistor gets smaller, the heat generated consists a larger portion of total energy consumption and generation) in addition to difficulties in efficient heat-dissipation at smaller nodes<br />
+• Manufacturing challenges in lithography, implant, deposition and etch at the smallest nodes<br />
+• Short-channel effects at small sizes
 
 <!--
-In this research post-doc Haixiang Han and I investigate (along with team members) how chirality can be structurally imparted into bulk materials starting from an atomic-scale in a continuous, unbroken hierarchy. Chirality is essential to both quantum-materials as well as fundamental biological building blocks. Our team had previously made two important discoveries pertaining to inorganic and chiral materials - 1) That it is possible to isomerize inorganic materials in a controlled bistable manner beyond metal-organic/inorganic complexes ([Science](https://www.science.org/doi/10.1126/science.aau9464)) and 2) Concentration can help focus the size of nanoparticles to stable domains that can exhibit this isomerization ([JACS](https://pubs.acs.org/doi/10.1021/jacs.5b10006)). 
+Rationale:
+Results: 
+Methods:
+Conclusion:
+-->
 
-We were able to extend this further and demonstrate that these building blocks can spontaneously form thin-films through a filament formation mechanism that wraps these atomically-precise magic-sized nanocrystals in a spin-selective manner. A key element here is that our method can impart chirality in a structural, scalable, and hierarchical manner irrespective of the chirality of the starting components. This enables key materials building avenues for various applications within biology, quantum information and quantum processing. 
+<!-- -->
 
 <!-- In this research I ask why, while-->
 <!-- I argue that, they realize that; if they, they must --> 
@@ -51,7 +51,6 @@ We were able to extend this further and demonstrate that these building blocks c
 <!-- I also explore the temporal dynamics of -->
 <!-- I explore how actually conduct using an __ __model to predict when likely to-->
 <!-- Such simulation based approaches help us understand the role that can play-->
--->
 
 <!--
 ## Abstract

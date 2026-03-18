@@ -8,17 +8,15 @@ header:
   og_image: "research/chiral-materials.jpg"
 ---
 
-<hr style="border: none; height: 3px; background-color: red; border-top: 4px #4183C4;">
+<hr style="border: none; height: 3px; background-color: blue; border-top: 4px #4183C4;">
 
 <u>Advisors</u>: Prof. <b>[Richard Robinson](https://www.engineering.cornell.edu/faculty-directory/richard-douglas-robinson)</b> and Prof. <b>[Tobias Hanrath](https://www.cheme.cornell.edu/faculty-directory/tobias-hanrath)</b><br/>
-
 <u>Institution</u>: Department of Materials Science and Engineering, Cornell University<br/>
+<u>MS thesis defense:</u> <b>[Link](https://www.dropbox.com/scl/fi/kichd5dx01smrr645o9p8/MS-M-Exam-Thesis-Defense-Shantanu-Kallakuri.mp4?rlkey=tj8dmz8jkr6wdif9gjhp8qbqh&e=1&st=98ipu85m&dl=0)</b><br />
 
-<u>MS thesis defense:</u> <b>[Link](https://www.dropbox.com/scl/fi/kichd5dx01smrr645o9p8/MS-M-Exam-Thesis-Defense-Shantanu-Kallakuri.mp4?rlkey=tj8dmz8jkr6wdif9gjhp8qbqh&e=1&st=98ipu85m&dl=0)</b>
+<u>Publication</u>: H. X. Han, <b>S. Kallakuri</b>, Y. Yao, C. B. Williamson, D. R. Nevers, B. H. Savitzky, R. S. Skye, M. Xu, O. Voznyy, J. Dshemuchadse, L. F. Kourkoutis, S. J. Weinstein, T. Hanrath, R. D. Robinson. Multiscale hierarchical structures from a nanocluster mesophase.<br /><b>Nature Materials</b>, 21(5): 518-525. [DOI: 10.1038/s41563-022-01223-3](https://doi.org/10.1038/s41563-022-01223-3)<br />
 
-<u>Publication</u>: H. X. Han, <b>S. Kallakuri</b>, Y. Yao, C. B. Williamson, D. R. Nevers, B. H. Savitzky, R. S. Skye, M. Xu, O. Voznyy, J. Dshemuchadse, L. F. Kourkoutis, S. J. Weinstein, T. Hanrath, R. D. Robinson. Multiscale hierarchical structures from a nanocluster mesophase. <b>Nature Materials</b>, 21(5): 518-525. [DOI: 10.1038/s41563-022-01223-3](https://doi.org/10.1038/s41563-022-01223-3)<br />
-
-<hr style="border: none; height: 3px; background-color: red; border-top: 4px #4183C4;">
+<hr style="border: none; height: 3px; background-color: blue; border-top: 4px #4183C4;">
 
 In this research post-doc Haixiang Han and I investigate (along with team members) how chirality can be structurally imparted into bulk materials starting from an atomic-scale in a continuous, unbroken hierarchy. Chirality is essential to both quantum-materials as well as fundamental biological building blocks. Our team had previously made two important discoveries pertaining to inorganic and chiral materials - 1) That it is possible to isomerize inorganic materials in a controlled bistable manner beyond metal-organic/inorganic complexes ([Science](https://www.science.org/doi/10.1126/science.aau9464)) and 2) Concentration can help focus the size of nanoparticles to stable domains that can exhibit this isomerization ([JACS](https://pubs.acs.org/doi/10.1021/jacs.5b10006)). 
 

@@ -1,9 +1,13 @@
 ---
 title: "Advanced-node FET/HEMT transistors"
-layout: single-portfolio
+layout: single
 excerpt: "<img src='/images/research/gaafethemt.jpg' alt=''>"
 collection: research
 order_number: 20
+toc: true
+toc_label: "Contents"
+toc_icon: "list"
+toc_sticky: true
 header: 
   og_image: "research/gaafethemt.jpg"
 ---
@@ -23,13 +27,20 @@ header:
 
 <hr style="border: none; height: 3px; background-color: #4183C4; border-top: 4px #4183C4;">
 
-I am a Process Engineer working on developing ultra-thin (<10A) deposition and growth processes for materials in advanced-node transistor (<1.2nm) structures for GAAFET and HEMT applications. Methods I utilize for this are Atomic-layer deposition (ALD), Atomic-layer epitaxy (ALE), and Atomic-layer etch (ALE). 
+## Introduction
 
-Introduction & necessity: Transistor scaling has hit a fundamental quantum limit, leading to the breakdown of Moore's law in today's semiconductor nodes (<2nm). Reasons for this are:<br />
+I am a Process Engineer working on developing ultra-thin (<10A) deposition and growth processes for materials in advanced-node transistor (<1.2nm) structures for GAAFET and HEMT applications. Methods I utilize for this are Atomic-layer deposition (ALD), Atomic-layer epitaxy (ALE), and Atomic-layer etch (ALE). I was previously a co-op intern at AMAT as well in the Varian ion implant division, where I worked on Plasma-enhanced Chemical Vapor Deposition (PE-CVD) and Reactive ion etching (RIE) of metals and dielectrics.
+
+## Necessity and Challenges:
+
+Transistor scaling has hit a fundamental quantum limit, leading to the breakdown of Moore's law in today's semiconductor nodes (<2nm). Reasons for this are:<br />
+
 • Quantum tunneling and leakage<br />
 • Issues in thermal scaling (as each transistor gets smaller, the heat generated consists a larger portion of total energy consumption and generation) in addition to difficulties in efficient heat-dissipation at smaller nodes<br />
 • Manufacturing challenges in lithography, implant, deposition and etch at the smallest nodes<br />
 • Short-channel effects at small sizes
+
+All of these challenges necessitate a rapid inflection to vertical (3D) architectures for both logic (compute) and memory (DRAM/NAND etc.) chips. This can only be brought about with the extremely thin-layer formation possible using techniques like ALD and Epitaxy (Often between 5-15 Angstroms) in concert with atomic-scale tolerance etch techniques.
 
 <!--
 Rationale:

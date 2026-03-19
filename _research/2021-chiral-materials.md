@@ -1,14 +1,18 @@
 ---
 title: "Spin-selective chiral multiscale materials"
-layout: single-portfolio
+layout: single
 excerpt: "<img src='/images/research/chiral-materials.jpg' alt=''>"
 collection: research
 order_number: 10
+toc: true
+toc_label: "Contents"
+toc_icon: "list"
+toc_sticky: true
 header: 
   og_image: "research/chiral-materials.jpg"
 ---
 
-<hr style="border: none; height: 3px; background-color: blue; border-top: 4px #4183C4;">
+<hr style="border: none; height: 3px; background-color: #4183C4; border-top: 4px #4183C4;">
 
 <u>Advisors</u>: Prof. <b>[Richard Robinson](https://www.engineering.cornell.edu/faculty-directory/richard-douglas-robinson)</b> and Prof. <b>[Tobias Hanrath](https://www.cheme.cornell.edu/faculty-directory/tobias-hanrath)</b><br/>
 <u>Institution</u>: Department of Materials Science and Engineering, Cornell University<br/>
@@ -16,9 +20,11 @@ header:
 
 <u>Publication</u>: H. X. Han, <b>S. Kallakuri</b>, Y. Yao, C. B. Williamson, D. R. Nevers, B. H. Savitzky, R. S. Skye, M. Xu, O. Voznyy, J. Dshemuchadse, L. F. Kourkoutis, S. J. Weinstein, T. Hanrath, R. D. Robinson. Multiscale hierarchical structures from a nanocluster mesophase.<br /><b>Nature Materials</b>, 21(5): 518-525. [DOI: 10.1038/s41563-022-01223-3](https://doi.org/10.1038/s41563-022-01223-3)<br />
 
-<hr style="border: none; height: 3px; background-color: blue; border-top: 4px #4183C4;">
+<hr style="border: none; height: 3px; background-color: #4183C4; border-top: 4px #4183C4;">
 
-In this research post-doc Haixiang Han and I investigate (along with team members) how chirality can be structurally imparted into bulk materials starting from an atomic-scale in a continuous, unbroken hierarchy. Chirality is essential to both quantum-materials as well as fundamental biological building blocks. Our team had previously made two important discoveries pertaining to inorganic and chiral materials - 1) That it is possible to isomerize inorganic materials in a controlled bistable manner beyond metal-organic/inorganic complexes ([Science](https://www.science.org/doi/10.1126/science.aau9464)) and 2) Concentration can help focus the size of nanoparticles to stable domains that can exhibit this isomerization ([JACS](https://pubs.acs.org/doi/10.1021/jacs.5b10006)). 
+## Introduction
+
+In this research post-doc Haixiang Han and I (along with our team) investigate how chirality can be structurally imparted into bulk materials starting from an atomic-scale in a continuous, unbroken hierarchy. Chirality is essential to both quantum-materials as well as fundamental biological building blocks. Our team had previously made two important discoveries pertaining to inorganic and chiral materials - 1) That it is possible to isomerize inorganic materials in a controlled bistable manner beyond metal-organic/inorganic complexes ([Science](https://www.science.org/doi/10.1126/science.aau9464)) and 2) Concentration can help focus the size of nanoparticles to stable domains that can exhibit this isomerization ([JACS](https://pubs.acs.org/doi/10.1021/jacs.5b10006)). 
 
 We were able to extend this further and demonstrate that these building blocks can spontaneously form thin-films through a filament formation mechanism that wraps these atomically-precise magic-sized nanocrystals in a spin-selective manner. A key element here is that our method can impart chirality in a structural, scalable, and hierarchical manner irrespective of the chirality of the starting components. This enables key materials building avenues for various applications within biology, quantum information and quantum processing. 
 
@@ -41,10 +47,10 @@ We were able to extend this further and demonstrate that these building blocks c
 [Article](https://doi.org/10.1038/s41563-022-01223-3){: .btn--research} [Publication](/files/pdf/research/2022 - Multiscale hierarchical structures from a nanocluster mesophase.pdf){: .btn--research} [Supplemental Information](/files/pdf/research/2022 - Multiscale hierarchical structures from a nanocluster mesophase - SI.pdf){: .btn--research}
 
 
-## Impact and Coverage:
+## Impact and Engagement:
 
 Details on this work have been covered in multiple news articles that picked up on it below:<br />
-(<b>[Nature Press](https://www.nature.com/articles/s41563-022-01235-z) <span>&#124;</span> [Cornell News](https://news.cornell.edu/stories/2022/04/nanoclusters-self-organize-centimeter-scale-hierarchical-assemblies) <span>&#124;</span> [Phys.org](https://phys.org/news/2022-04-nanoclusters-self-organize-centimeter-scale-hierarchical.html) <span>&#124;</span> [Eurekalert](https://www.eurekalert.org/news-releases/950527) <span>&#124;</span> [Technology.org](https://www.technology.org/2022/04/17/nanoclusters-self-organize-hierarchy/) <span>&#124;</span> [Newswise](https://www.newswise.com/articles/nanoclusters-self-organize-into-centimeter-scale-hierarchical-assemblies) <span>&#124;</span> [Science News](https://sciencenewsnet.in/nanoclusters-self-organize-into-centimeter-scale-hierarchical-assemblies/) <span>&#124;</span> [Nanowerk](https://www.nanowerk.com/nanotechnology-news2/newsid=60396.php) <span>&#124;</span> [Science Springs](https://sciencesprings.wordpress.com/2022/04/14/from-the-cornell-chronicle-nanoclusters-self-organize-into-centimeter-scale-hierarchical-assemblies/) <span>&#124;</span> [NanoTech Now](https://www.nanotech-now.com/news.cgi?story_id=57033)</b>). Super excited to see this platform realize it's potential!
+<b>[Nature Press](https://www.nature.com/articles/s41563-022-01235-z) <span>&#124;</span> [Cornell News](https://news.cornell.edu/stories/2022/04/nanoclusters-self-organize-centimeter-scale-hierarchical-assemblies) <span>&#124;</span> [Phys.org](https://phys.org/news/2022-04-nanoclusters-self-organize-centimeter-scale-hierarchical.html) <span>&#124;</span> [Eurekalert](https://www.eurekalert.org/news-releases/950527) <span>&#124;</span> [Technology.org](https://www.technology.org/2022/04/17/nanoclusters-self-organize-hierarchy/) <span>&#124;</span> [Newswise](https://www.newswise.com/articles/nanoclusters-self-organize-into-centimeter-scale-hierarchical-assemblies) <span>&#124;</span> [Science News](https://sciencenewsnet.in/nanoclusters-self-organize-into-centimeter-scale-hierarchical-assemblies/) <span>&#124;</span> [Nanowerk](https://www.nanowerk.com/nanotechnology-news2/newsid=60396.php) <span>&#124;</span> [Science Springs](https://sciencesprings.wordpress.com/2022/04/14/from-the-cornell-chronicle-nanoclusters-self-organize-into-centimeter-scale-hierarchical-assemblies/) <span>&#124;</span> [NanoTech Now](https://www.nanotech-now.com/news.cgi?story_id=57033)</b>. Super excited to see this platform realize it's potential!
 <br/>
 
 <!--

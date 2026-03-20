@@ -1,9 +1,13 @@
 ---
-layout: archive
+layout: single
 title: "Inspirations"
 excerpt: "Inspirations"
 permalink: /inspirations/
 author_profile: true
+toc: true
+toc_label: "Contents"
+toc_icon: "list"
+toc_sticky: true
 #redirect_from: 
 #  - /inspirations.html
   #  - /inspirations/
@@ -21,19 +25,24 @@ My research is deeply influenced by my values and interests. I love building thi
 
 Consequently, I am a strong proponent for scalable systems that minimize consumption and maximize utility. My past research has been strongly multi-disciplinary and I hope to continue along the same lines, since achieving these lofty objectives necessitates multidisciplinary science and engineering approaches so we can create comprehensive end-to-end material cycles and avoid a future filled with insidious materials like polythene (Plus it's more fun to do things together!). I thus seek to align my research in coherence with all these ideas.<br/><br/>
 
-## 3. Design Principles
-### 3.1 Bottom-up systems
+## Design Principles:
+
+
+Bottom-up systems:
+
 One of my fundamental interests is in <b>[bottom-up](https://en.wikipedia.org/wiki/Nanomaterials#Bottom-up_methods)</b> materials chemistry approaches to help design and build <b>[larger functional materials](https://www.sciencedirect.com/topics/materials-science/functional-material)</b> from individual entities like <b>[atoms](https://en.wikipedia.org/wiki/Atom)</b> / <b>[quantum-dots](https://en.wikipedia.org/wiki/Quantum_dot)</b> / <b>[nanocrystals](https://en.wikipedia.org/wiki/Nanocrystalline_material)</b> / <b>[small molecules](https://doi.org/10.1021/acs.chemrev.2c00844)</b> / <b>[macro molecules](https://en.wikipedia.org/wiki/Macromolecule#Synthetic_macromolecules)</b> using methods that require minimal intervention i.e. <b>[molecular self-assembly](https://en.wikipedia.org/wiki/Molecular_self-assembly)</b> / <b>[directed self-assembly](https://en.wikipedia.org/wiki/Directed_assembly_of_micro-_and_nano-structures)</b> / <b>[amphiphilic self-assembly](https://pubs.acs.org/doi/10.1021/ar200226d)</b> / <b>[atomic layer deposition](https://en.wikipedia.org/wiki/Atomic_layer_deposition)</b> / <b>[chemical vapor deposition](https://en.wikipedia.org/wiki/Plasma-enhanced_chemical_vapor_deposition)</b> / <b>[click-chemistry](https://en.wikipedia.org/wiki/Click_chemistry)</b>. As most of these routes can be self-directed given the right conditions; atoms & molecules can be coerced to spontaneously assemble into anything we want them to, given the right conditions and only limited by our imagination. This ability to build, construct, and utilize materials is something I find fascinatingly boundless.
 <br/><br/>
 
-### 3.2 Practical Scalability
+Practical Scalability:
 
 To be able to innovate, we need a translation of ideas and manufacturability. I see 1) <b>[high-speed devices](https://semiwiki.com/semiconductor-manufacturers/tsmc/339578-iedm-tsmc-ongoing-research-on-a-cfet-process/)</b> and <b>[low-power computing](https://en.wikipedia.org/wiki/Low-power_electronics)</b>, 2) <b>[spintronics](https://www.sciencedirect.com/science/article/pii/S0304885320302353)</b>, 3) <b>[quantum-dot cellular automata](https://en.wikipedia.org/wiki/Quantum_dot_cellular_automaton)</b>, 4) <b>[quantum automata for logic and memory](https://en.wikipedia.org/wiki/Quantum_cellular_automaton)</b>, and 5) <b>[photonic devices](https://en.wikipedia.org/wiki/Photonic_integrated_circuit)</b> as the main avenues that fit into this possibility. Reasons for this are multifold - these approaches have well-defined functionality, and massively amplify or enhance the properties of the individual entities they comprise of in a systematic, controllable manner - One that tends to be low-entropy with high surface / volume ratios as opposed to bulk materials which exhibit large disorder at all scales. This attribute increases efficiency, efficacy, and scalability of these properties and makes it possible to harness exotic properties (Like <b>[size-quantization](https://www.sciencedirect.com/topics/chemistry/quantum-size-effect#:~:text=Quantum%20size%20effect%20refers%20to,splitting%20or%20energy%20gap%20widening.)</b>, <b>[superconductivity](https://www.energy.gov/science/doe-explainssuperconductivity#:~:text=Superconductivity%20is%20the%20property%20of,transition%20to%20the%20superconducting%20state.)</b>, <b>[negative refractive index metamaterials](https://www.nature.com/articles/s41566-022-01137-1)</b>, and <b>[circular dichroism](https://www.pnas.org/doi/10.1073/pnas.93.23.12943)</b>).
 <br/><br/>
 
-### 3.3 Programmable matter
+Programmable matter:
+
 A closely related research interest of mine is the ability to <b>[program matter](https://en.wikipedia.org/wiki/Programmable_matter)</b> - utilizing artificial atoms such as <b>[nanoparticles](https://onlinelibrary.wiley.com/doi/10.1002/adma.202107875)</b> and <b>[quantum dots](https://doi.org/10.1126/science.aaz8541)</b> or individual atoms and molecules. This involves engineering molecules to create 'lego blocks' that <b>[interact with](https://pubs.acs.org/doi/full/10.1021/acs.jpcc.4c02012)</b>, <b>[correlate with](https://pubs.acs.org/doi/abs/10.1021/acs.chemmater.6b00623)</b>, or <b>[integrate into](https://www.nature.com/articles/nmat4576)</b> structures for specific purposes. Examples include <b>[superlattices](https://pubs.aip.org/avs/jva/article-abstract/30/3/030802/244536/Colloidal-nanocrystal-quantum-dot-assemblies-as)</b>, <b>[block copolymers](https://www.nature.com/articles/s41467-024-49839-0)</b>, <b>[coupled quantum-dots](https://pubs.acs.org/doi/abs/10.1021/acs.jpclett.7b00846)</b>, <b>[polymer brushes](https://pubs.acs.org/doi/abs/10.1021/jacs.4c06924)</b>, and <b>[programmable atom-equivalents](https://mirkin-group.northwestern.edu/project/programmable-nanomaterials/#:~:text=Unlike%20atomic%20systems%20in%20which,from%20the%20oligonucleotide%20%E2%80%9Cbonds%E2%80%9D%20)</b>. The natural ability of systems like <b>[natural photonic structures](https://www.nature.com/articles/nature01941)</b> in butterfly wings for example, and <b>[DNA](https://bio.libretexts.org/Courses/Portland_Community_College/Cascade_Microbiology/22%3A_Appendix_B_-_Molecular_Genetics_Review/22.2%3A_Structure_and_Function_of_DNA)</b>, where the <b>[nucleotides](https://en.wikipedia.org/wiki/Nucleotide)</b> operate in a sequential, countably limited manner, but generate stochastic process and unlimited hierarchical variants never ceases to amaze me.
 <br/><br/>
 
-### 3.4 Lowering consumption
+Lowering consumption:
+
 The biggest problem we face today is undoubtedly uncontrolled <b>[consumption patterns](https://www.theworldcounts.com/challenges/climate-change/energy/global-energy-consumption)</b> and growing resource disparity that is exacerbated by population explosion. These cycles are only bound to snowball as population grows exponentially with <b>[no sustainable](https://ourworldindata.org/waste-management)</b> and quick way to reuse or recycle them. A good way to control this is to bring about awareness and education but given the time needed, massive number of people, complex geopolitics, fast fashion, fmcg, lower costs, and ineffective administration, there is no single authority that can implement this effectively. We will ultimately have to side-step this by engineering the materials themselves to either degrade and/or minimize the volume and energy needed for their function - Giving ourselves no choice but to have to degrade the materials after set times.<br/><br/>

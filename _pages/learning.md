@@ -124,6 +124,8 @@ Damping γ:
 <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
+Work in progress:
+
 ## 1. Damped Oscillator (Test plot)
 <div class="demo-section">
 <h4>Python (Pyodide) — Damped Oscillator (Interactive)</h4>

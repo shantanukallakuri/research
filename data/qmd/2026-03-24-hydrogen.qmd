@@ -1,0 +1,255 @@
+---
+title: "Hydrogen Atom & Energy Levels"
+author: "Shan"
+date: today
+format:
+  html:
+    toc: true
+    code-fold: true
+    self-contained: false
+    html-math-method:
+        method: mathjax
+        url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+execute:
+  echo: true
+  warning: false
+---
+
+## The Hydrogen Atom
+
+The hydrogen atom is the simplest bound quantum system — a single electron 
+of charge $-e$ bound to a proton of charge $+e$ by the Coulomb potential:
+
+$$
+V(r) = -\frac{e^2}{4\pi\epsilon_0 r}
+$$
+
+The time-independent Schrödinger equation in spherical coordinates is:
+
+$$
+\left[ -\frac{\hbar^2}{2m_e}\nabla^2 + V(r) \right] \psi(r,\theta,\phi) = E\psi(r,\theta,\phi)
+$$
+
+Separating variables, the wavefunction factorizes as:
+
+$$
+\psi_{n\ell m}(r,\theta,\phi) = R_{n\ell}(r)\, Y_\ell^m(\theta,\phi)
+$$
+
+where $R_{n\ell}$ are the radial wavefunctions and $Y_\ell^m$ are the 
+spherical harmonics.
+
+---
+
+## Energy Eigenvalues
+
+Solving the radial equation yields the quantized energy levels:
+
+$$
+E_n = -\frac{m_e e^4}{2\hbar^2} \cdot \frac{1}{(4\pi\epsilon_0)^2} \cdot \frac{1}{n^2}
+= -\frac{13.6 \text{ eV}}{n^2}, \quad n = 1, 2, 3, \ldots
+$$
+
+The ground state energy is $E_1 = -13.6\ \text{eV}$. The negative sign 
+reflects a bound state — energy must be supplied to ionize the atom. 
+The ionization energy is therefore $13.6\ \text{eV}$.
+
+The **Bohr radius** sets the natural length scale:
+
+$$
+a_0 = \frac{4\pi\epsilon_0\hbar^2}{m_e e^2} \approx 0.529\ \text{Å}
+$$
+
+---
+
+## Python: Computing Energy Levels
+```{python}
+import numpy as np
+import plotly.graph_objects as go
+
+# Constants
+E1 = -13.6  # eV, ground state energy
+
+# Quantum numbers
+n_vals = np.arange(1, 11)
+E_n = E1 / n_vals**2
+
+for n, E in zip(n_vals, E_n):
+    print(f"n = {n:2d}  →  E = {E:8.4f} eV")
+```
+
+---
+
+## Interactive Energy Level Diagram
+```{python}
+fig = go.Figure()
+
+colors = [
+    "#6C5CE7","#0984E3","#00B894","#FDCB6E",
+    "#E17055","#D63031","#A29BFE","#FD79A8","#55EFC4","#B2BEC3"
+]
+
+# Draw energy levels as horizontal lines
+for i, (n, E) in enumerate(zip(n_vals, E_n)):
+    fig.add_shape(
+        type="line",
+        x0=0.1, x1=0.9,
+        y0=E, y1=E,
+        line=dict(color=colors[i], width=2.5)
+    )
+    fig.add_annotation(
+        x=0.93, y=E,
+        text=f"n={n}  {E:.2f} eV",
+        showarrow=False,
+        font=dict(size=11, color=colors[i]),
+        xanchor="left"
+    )
+
+# Draw a few transitions (Lyman series, n→1)
+lyman_upper = [2, 3, 4]
+for n_upper in lyman_upper:
+    E_upper = E1 / n_upper**2
+    E_lower = E1
+    delta_E = E_upper - E_lower
+    wavelength_nm = 1240 / abs(delta_E)
+    fig.add_annotation(
+        x=0.5, y=(E_upper + E_lower) / 2,
+        ax=0.5, ay=(E_upper + E_lower) / 2,
+        axref="x", ayref="y",
+        xref="x", yref="y",
+        showarrow=True,
+        arrowhead=2,
+        arrowsize=1.2,
+        arrowwidth=1.5,
+        arrowcolor="#636E72",
+        text=f"λ={wavelength_nm:.0f} nm",
+        font=dict(size=9, color="#636E72"),
+        xanchor="right"
+    )
+
+fig.update_layout(
+    title="Hydrogen Atom Energy Levels",
+    xaxis=dict(visible=False, range=[0, 1.4]),
+    yaxis=dict(
+        title="Energy (eV)",
+        range=[-15, 1],
+        tickvals=list(E_n[:6]),
+        ticktext=[f"{E:.2f}" for E in E_n[:6]],
+        gridcolor="rgba(150,150,150,0.15)"
+    ),
+    plot_bgcolor="white",
+    paper_bgcolor="white",
+    height=600,
+    margin=dict(l=60, r=180, t=60, b=40),
+    font=dict(family="serif")
+)
+
+fig.show()
+```
+
+---
+
+## Radial Wavefunctions
+
+The first few radial wavefunctions $R_{n\ell}(r)$ are:
+
+$$
+R_{10}(r) = 2\left(\frac{1}{a_0}\right)^{3/2} e^{-r/a_0}
+$$
+
+$$
+R_{20}(r) = \frac{1}{\sqrt{2}}\left(\frac{1}{2a_0}\right)^{3/2}
+\left(2 - \frac{r}{a_0}\right)e^{-r/2a_0}
+$$
+
+$$
+R_{21}(r) = \frac{1}{\sqrt{24}}\left(\frac{1}{2a_0}\right)^{3/2}
+\frac{r}{a_0}\,e^{-r/2a_0}
+$$
+```{python}
+from scipy.special import genlaguerre, factorial
+
+def R_nl(n, l, r_bohr):
+    """Radial wavefunction R_nl(r), r in units of a0."""
+    rho = 2 * r_bohr / n
+    norm = np.sqrt(
+        (2 / n)**3 * factorial(n - l - 1) /
+        (2 * n * factorial(n + l)**3)
+    )
+    L = genlaguerre(n - l - 1, 2 * l + 1)(rho)
+    return norm * np.exp(-rho / 2) * rho**l * L
+
+r = np.linspace(0, 30, 1000)  # in units of a0
+
+fig2 = go.Figure()
+
+orbitals = [(1,0,"1s"), (2,0,"2s"), (2,1,"2p"), (3,0,"3s"), (3,1,"3p")]
+palette  = ["#6C5CE7","#0984E3","#00B894","#E17055","#FDCB6E"]
+
+for (n, l, label), color in zip(orbitals, palette):
+    psi = R_nl(n, l, r)
+    prob = r**2 * psi**2          # radial probability density
+
+    fig2.add_trace(go.Scatter(
+        x=r, y=prob,
+        name=label,
+        line=dict(color=color, width=2),
+        hovertemplate=f"{label}<br>r = %{{x:.2f}} a₀<br>r²|R|² = %{{y:.4f}}<extra></extra>"
+    ))
+
+fig2.update_layout(
+    title="Radial Probability Densities r²|R_{nl}|²",
+    xaxis_title="r / a₀",
+    yaxis_title="r² |R(r)|²",
+    plot_bgcolor="white",
+    paper_bgcolor="white",
+    height=450,
+    legend=dict(title="Orbital"),
+    font=dict(family="serif")
+)
+
+fig2.show()
+```
+
+---
+
+## Transition Energies & Spectral Series
+
+Photon energy for a transition $n_i \to n_f$ follows from the Rydberg formula:
+
+$$
+\Delta E = 13.6\left(\frac{1}{n_f^2} - \frac{1}{n_i^2}\right)\ \text{eV},
+\qquad \frac{1}{\lambda} = R_\infty\left(\frac{1}{n_f^2} - \frac{1}{n_i^2}\right)
+$$
+
+where $R_\infty = 1.097 \times 10^7\ \text{m}^{-1}$ is the Rydberg constant.
+```{python}
+series = {
+    "Lyman (UV, nf=1)":   (1, range(2, 8)),
+    "Balmer (Vis, nf=2)": (2, range(3, 9)),
+    "Paschen (IR, nf=3)": (3, range(4, 10)),
+}
+
+print(f"{'Series':<25} {'ni':>4} {'ΔE (eV)':>10} {'λ (nm)':>10}")
+print("-" * 55)
+for name, (nf, ni_range) in series.items():
+    for ni in ni_range:
+        dE  = 13.6 * (1/nf**2 - 1/ni**2)
+        lam = 1240 / abs(dE)
+        print(f"{name:<25} {ni:>4}   {dE:>9.3f}   {lam:>9.1f}")
+    print()
+```
+
+---
+
+## Render to HTML
+
+To render this document, run from your terminal:
+```bash
+quarto render hydrogen.qmd --to html
+```
+
+Or to also produce a PDF alongside:
+```bash
+quarto render hydrogen.qmd --to html,pdf
+```

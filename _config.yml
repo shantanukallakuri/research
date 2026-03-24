@@ -154,6 +154,8 @@ exclude:
   - package.json
   - tmp
   - vendor
+  - data/qmd/
+  - data/html/
 keep_files:
   - .git
   - .svn

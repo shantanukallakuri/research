@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hydrogen Atom — Interactive</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <script>
+    MathJax = {
+      tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+
+  <!-- Pyodide -->
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+
+  <style>
+    body { font-family: Georgia, serif; color: #2a2a2a; background: #fff; }
+
+    /* ── Layout ── */
+    #toc-sidebar {
+      position: sticky;
+      top: 2rem;
+      height: fit-content;
+      font-size: 0.85rem;
+      border-left: 2px solid #dee2e6;
+      padding-left: 1rem;
+    }
+    #toc-sidebar ul { list-style: none; padding-left: 0.5rem; margin: 0; }
+    #toc-sidebar li { margin: 0.3rem 0; }
+    #toc-sidebar a { color: #6c757d; text-decoration: none; display: block; padding: 0.15rem 0; }
+    #toc-sidebar a:hover { color: #0d6efd; }
+    #toc-sidebar a.active { color: #0d6efd; font-weight: 600; }
+
+    h2 { margin-top: 2.5rem; border-bottom: 1px solid #dee2e6; padding-bottom: 0.4rem; }
+    h3 { margin-top: 1.5rem; color: #444; }
+    p  { line-height: 1.8; }
+
+    /* ── Loading overlay ── */
+    #loading-overlay {
+      position: fixed; inset: 0;
+      background: rgba(255,255,255,0.92);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.4s;
+    }
+    #loading-overlay.hidden { opacity: 0; pointer-events: none; }
+
+    .spinner {
+      width: 48px; height: 48px;
+      border: 5px solid #dee2e6;
+      border-top-color: #0d6efd;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin-bottom: 1rem;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    #loading-status {
+      font-size: 0.9rem; color: #6c757d;
+      font-family: monospace;
+      max-width: 300px; text-align: center;
+    }
+
+    /* ── Controls ── */
+    .control-panel {
+      background: #f8f9fa;
+      border: 1px solid #dee2e6;
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .control-panel label { font-size: 0.9rem; color: #555; margin-bottom: 0.2rem; }
+    .control-panel select, .control-panel input[type=range] { width: 100%; }
+    .control-panel .value-badge {
+      display: inline-block;
+      background: #0d6efd;
+      color: white;
+      border-radius: 4px;
+      padding: 0 6px;
+      font-size: 0.8rem;
+      font-family: monospace;
+    }
+
+    /* ── Tables ── */
+    .data-table { font-size: 0.875rem; font-family: monospace; }
+
+    /* ── Code blocks ── */
+    details.code-block { margin: 1rem 0; }
+    details.code-block summary {
+      cursor: pointer;
+      color: #0d6efd;
+      font-size: 0.85rem;
+      user-select: none;
+      margin-bottom: 0.5rem;
+    }
+    details.code-block pre {
+      background: #f8f9fa;
+      border: 1px solid #dee2e6;
+      border-radius: 6px;
+      padding: 1rem;
+      font-size: 0.8rem;
+      overflow-x: auto;
+    }
+
+    /* ── Equation display ── */
+    .eq-box {
+      background: #f8f9fa;
+      border-left: 3px solid #0d6efd;
+      padding: 0.8rem 1.2rem;
+      margin: 1rem 0;
+      border-radius: 0 6px 6px 0;
+      overflow-x: auto;
+    }
+
+    /* ── Result readout ── */
+    .readout {
+      background: #e8f4fd;
+      border: 1px solid #b8daff;
+      border-radius: 6px;
+      padding: 0.75rem 1rem;
+      font-family: monospace;
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Loading overlay -->
+<div id="loading-overlay">
+  <div class="spinner"></div>
+  <div id="loading-status">Initialising Pyodide runtime...</div>
+</div>
+
+<div class="container-fluid px-4 py-4">
+  <div class="row">
+
+    <!-- TOC Sidebar -->
+    <div class="col-lg-3 d-none d-lg-block">
+      <div id="toc-sidebar">
+        <div style="font-size:0.75rem; text-transform:uppercase;
+                    letter-spacing:0.08em; color:#aaa; margin-bottom:0.5rem;">
+          Contents
+        </div>
+        <ul>
+          <li><a href="#sec-atom">The Hydrogen Atom</a></li>
+          <li><a href="#sec-energy">Energy Eigenvalues</a></li>
+          <li><a href="#sec-levels">Interactive Energy Levels</a></li>
+          <li><a href="#sec-wavefn">Radial Wavefunctions</a></li>
+          <li><a href="#sec-orbital">Orbital Explorer</a></li>
+          <li><a href="#sec-transitions">Spectral Series</a></li>
+          <li><a href="#sec-custom">Custom Calculator</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="col-lg-9">
+
+      <h1>Hydrogen Atom &amp; Energy Levels</h1>
+      <p class="text-muted mb-4">
+        Interactive quantum mechanics — computed live in the browser via Pyodide + scipy.
+      </p>
+      <hr>
+
+      <!-- ── Section 1 ── -->
+      <h2 id="sec-atom">The Hydrogen Atom</h2>
+      <p>
+        The hydrogen atom is the simplest bound quantum system: a single electron of charge
+        $-e$ orbiting a proton of charge $+e$ via the Coulomb potential.
+      </p>
+      <div class="eq-box">$$V(r) = -\frac{e^2}{4\pi\epsilon_0 r}$$</div>
+      <p>The time-independent Schrödinger equation in spherical coordinates is:</p>
+      <div class="eq-box">
+        $$\left[ -\frac{\hbar^2}{2m_e}\nabla^2 + V(r) \right]
+          \psi(r,\theta,\phi) = E\,\psi(r,\theta,\phi)$$
+      </div>
+      <p>Separation of variables gives $\psi_{n\ell m} = R_{n\ell}(r)\,Y_\ell^m(\theta,\phi)$,
+         where $R_{n\ell}$ are radial wavefunctions and $Y_\ell^m$ are spherical harmonics.</p>
+
+      <!-- ── Section 2 ── -->
+      <h2 id="sec-energy">Energy Eigenvalues</h2>
+      <p>Solving the radial equation yields quantised energy levels:</p>
+      <div class="eq-box">
+        $$E_n = -\frac{m_e e^4}{2\hbar^2(4\pi\epsilon_0)^2}\cdot\frac{1}{n^2}
+               = -\frac{13.6\text{ eV}}{n^2}, \quad n = 1,2,3,\ldots$$
+      </div>
+      <p>
+        The Bohr radius $a_0 = 4\pi\epsilon_0\hbar^2/m_e e^2 \approx 0.529\text{ Å}$
+        sets the natural length scale. The ionisation energy from the ground state
+        is $|E_1| = 13.6\text{ eV}$.
+      </p>
+
+      <!-- ── Section 3 ── -->
+      <h2 id="sec-levels">Interactive Energy Levels</h2>
+      <p>
+        Drag the slider to include more levels. Click a level line to read off
+        its exact energy.
+      </p>
+
+      <div class="control-panel">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <label>Show levels up to
+              <span class="value-badge" id="n-max-label">n = 8</span>
+            </label>
+            <input type="range" id="n-max-slider" min="3" max="15" value="8"
+                   oninput="updateEnergyPlot(this.value)">
+          </div>
+          <div class="col-md-6 mt-3 mt-md-0">
+            <label>Highlight series</label>
+            <select id="series-select" class="form-select form-select-sm"
+                    onchange="updateEnergyPlot(document.getElementById('n-max-slider').value)">
+              <option value="none">None</option>
+              <option value="lyman">Lyman (n→1, UV)</option>
+              <option value="balmer">Balmer (n→2, Visible)</option>
+              <option value="paschen">Paschen (n→3, IR)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div id="energy-plot" style="width:100%; height:580px;"></div>
+      <div class="readout" id="level-readout">Click an energy level line to inspect it.</div>
+
+      <!-- ── Section 4 ── -->
+      <h2 id="sec-wavefn">Radial Wavefunctions</h2>
+      <p>
+        The exact radial wavefunctions use associated Laguerre polynomials
+        $L_{n-\ell-1}^{2\ell+1}$, computed here via <code>scipy.special.genlaguerre</code>
+        running inside Pyodide:
+      </p>
+      <div class="eq-box">
+        $$R_{n\ell}(r) = -\sqrt{\left(\frac{2}{na_0}\right)^3
+          \frac{(n-\ell-1)!}{2n\,[(n+\ell)!]^3}}\;
+          e^{-r/na_0}\left(\frac{2r}{na_0}\right)^\ell
+          L_{n-\ell-1}^{2\ell+1}\!\left(\frac{2r}{na_0}\right)$$
+      </div>
+
+      <details class="code-block">
+        <summary>▶ Show Python code (runs in browser via Pyodide)</summary>
+        <pre><code>import numpy as np
+from scipy.special import genlaguerre, factorial
+
+def R_nl(n, l, r):
+    """Radial wavefunction, r in units of a0."""
+    rho  = 2 * r / n
+    norm = np.sqrt(
+        (2/n)**3 * factorial(n-l-1) /
+        (2 * n * factorial(n+l)**3)
+    )
+    L = genlaguerre(n-l-1, 2*l+1)(rho)
+    return norm * np.exp(-rho/2) * rho**l * L
+
+r = np.linspace(0, 40, 1000)
+
+orbitals = [(1,0,'1s'),(2,0,'2s'),(2,1,'2p'),
+            (3,0,'3s'),(3,1,'3p'),(3,2,'3d')]
+
+results = {}
+for n, l, label in orbitals:
+    psi  = R_nl(n, l, r)
+    prob = r**2 * psi**2
+    results[label] = prob.tolist()</code></pre>
+      </details>
+
+      <div id="wavefunction-plot" style="width:100%; height:450px;"></div>
+
+      <!-- ── Section 5 ── -->
+      <h2 id="sec-orbital">Orbital Explorer</h2>
+      <p>
+        Select any valid $(n, \ell)$ combination. The plot shows the radial probability
+        density $r^2|R_{n\ell}|^2$ and marks the most probable radius.
+      </p>
+
+      <div class="control-panel">
+        <div class="row">
+          <div class="col-sm-4">
+            <label>Principal quantum number $n$</label>
+            <select id="orbital-n" class="form-select form-select-sm"
+                    onchange="updateOrbitalL()">
+              <option>1</option><option>2</option><option>3</option>
+              <option>4</option><option>5</option>
+            </select>
+          </div>
+          <div class="col-sm-4 mt-3 mt-sm-0">
+            <label>Angular momentum $\ell$</label>
+            <select id="orbital-l" class="form-select form-select-sm"></select>
+          </div>
+          <div class="col-sm-4 mt-3 mt-sm-0 d-flex align-items-end">
+            <button class="btn btn-primary btn-sm w-100"
+                    onclick="computeOrbital()">Compute</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="orbital-plot" style="width:100%; height:380px;"></div>
+      <div class="readout" id="orbital-readout">Select an orbital and click Compute.</div>
+
+      <!-- ── Section 6 ── -->
+      <h2 id="sec-transitions">Spectral Series</h2>
+      <p>Photon energy for a transition $n_i \to n_f$:</p>
+      <div class="eq-box">
+        $$\Delta E = 13.6\left(\frac{1}{n_f^2} - \frac{1}{n_i^2}\right)\text{ eV},
+        \qquad \lambda = \frac{hc}{\Delta E}$$
+      </div>
+
+      <div id="transitions-table-container">
+        <p class="text-muted">Loading transition table...</p>
+      </div>
+
+      <!-- ── Section 7 ── -->
+      <h2 id="sec-custom">Custom Transition Calculator</h2>
+      <p>
+        Enter any initial and final quantum numbers to compute the transition energy
+        and wavelength, and identify which spectral series it belongs to.
+      </p>
+
+      <div class="control-panel">
+        <div class="row align-items-end">
+          <div class="col-sm-3">
+            <label>$n_i$ (initial)</label>
+            <input type="number" id="ni-input" class="form-control form-control-sm"
+                   value="3" min="2" max="20">
+          </div>
+          <div class="col-sm-3 mt-3 mt-sm-0">
+            <label>$n_f$ (final, $n_f &lt; n_i$)</label>
+            <input type="number" id="nf-input" class="form-control form-control-sm"
+                   value="1" min="1" max="19">
+          </div>
+          <div class="col-sm-3 mt-3 mt-sm-0 d-flex align-items-end">
+            <button class="btn btn-primary btn-sm w-100"
+                    onclick="computeTransition()">Calculate</button>
+          </div>
+        </div>
+      </div>
+      <div class="readout" id="transition-readout">Enter values and click Calculate.</div>
+
+    </div><!-- /main content -->
+  </div><!-- /row -->
+</div><!-- /container -->
+
+<script>
+// ════════════════════════════════════════════════════════
+// Global state
+// ════════════════════════════════════════════════════════
+let pyodide = null;
+let wfData  = {};   // cached wavefunction data from Python
+
+const COLORS = [
+  "#6C5CE7","#0984E3","#00B894","#E17055",
+  "#FDCB6E","#D63031","#A29BFE","#FD79A8",
+  "#55EFC4","#B2BEC3","#2d3436","#00cec9",
+  "#6d4c41","#37474f","#1b5e20"
+];
+
+// ════════════════════════════════════════════════════════
+// Pyodide initialisation
+// ════════════════════════════════════════════════════════
+async function initPyodide() {
+  const status = document.getElementById('loading-status');
+
+  status.textContent = 'Loading Pyodide runtime (~10 MB)...';
+  pyodide = await loadPyodide();
+
+  status.textContent = 'Installing numpy + scipy...';
+  await pyodide.loadPackage(['numpy', 'scipy']);
+
+  status.textContent = 'Running initial computations...';
+  await runInitialComputations();
+
+  // Hide overlay
+  const overlay = document.getElementById('loading-overlay');
+  overlay.classList.add('hidden');
+  setTimeout(() => overlay.remove(), 500);
+
+  // Draw everything
+  buildEnergyPlot(8);
+  buildWavefunctionPlot();
+  buildTransitionsTable();
+  updateOrbitalL();
+}
+
+// ════════════════════════════════════════════════════════
+// Python: compute all wavefunction data upfront
+// ════════════════════════════════════════════════════════
+async function runInitialComputations() {
+  await pyodide.runPythonAsync(`
+import numpy as np
+from scipy.special import genlaguerre, factorial
+import json
+
+def R_nl(n, l, r):
+    rho  = 2.0 * r / n
+    norm = np.sqrt(
+        (2.0/n)**3 * factorial(n-l-1) /
+        (2.0 * n * factorial(n+l)**3)
+    )
+    L    = genlaguerre(n-l-1, 2*l+1)(rho)
+    return norm * np.exp(-rho/2.0) * rho**l * L
+
+r = np.linspace(0, 50, 2000)
+r_store = r.tolist()
+
+orbitals = [
+  (1,0,'1s'),(2,0,'2s'),(2,1,'2p'),
+  (3,0,'3s'),(3,1,'3p'),(3,2,'3d'),
+  (4,0,'4s'),(4,1,'4p'),(4,2,'4d'),(4,3,'4f'),
+]
+
+wf_results = {}
+for n, l, label in orbitals:
+    psi  = R_nl(n, l, r)
+    prob = (r**2 * psi**2).tolist()
+    # find most probable radius
+    idx  = int(np.argmax(r**2 * psi**2))
+    r_mp = float(r[idx])
+    wf_results[label] = {
+      'prob': prob,
+      'r_mp': r_mp,
+      'n': n, 'l': l
+    }
+
+_r_json   = json.dumps(r_store)
+_wf_json  = json.dumps(wf_results)
+`);
+
+  const r_json  = pyodide.globals.get('_r_json');
+  const wf_json = pyodide.globals.get('_wf_json');
+
+  window.r_values = JSON.parse(r_json);
+  wfData = JSON.parse(wf_json);
+}
+
+// ════════════════════════════════════════════════════════
+// Section 3: Energy level diagram
+// ════════════════════════════════════════════════════════
+function buildEnergyPlot(nMax) {
+  const E1  = -13.6;
+  const ns  = Array.from({length: nMax}, (_, i) => i + 1);
+  const En  = ns.map(n => E1 / (n*n));
+
+  const series  = document.getElementById('series-select').value;
+  const nf_map  = { lyman: 1, balmer: 2, paschen: 3 };
+  const nf      = nf_map[series];
+
+  const shapes      = [];
+  const annotations = [];
+
+  ns.forEach((n, i) => {
+    const e = En[i];
+    const isSeries = nf && n > nf;
+    shapes.push({
+      type: 'line', x0: 0.05, x1: 0.85,
+      y0: e, y1: e,
+      line: {
+        color: isSeries ? '#e74c3c' : COLORS[i % COLORS.length],
+        width: isSeries ? 3 : 2
+      }
+    });
+    annotations.push({
+      x: 0.88, y: e,
+      text: `n=${n} &nbsp; ${e.toFixed(3)} eV`,
+      showarrow: false,
+      font: { size: 10, color: COLORS[i % COLORS.length] },
+      xanchor: 'left', yanchor: 'middle'
+    });
+  });
+
+  // Series transition arrows
+  if (nf) {
+    for (let ni = nf + 1; ni <= Math.min(nf + 4, nMax); ni++) {
+      const Ei = E1/(ni*ni);
+      const Ef = E1/(nf*nf);
+      const dE = Math.abs(Ei - Ef);
+      const wl = (1240 / dE).toFixed(0);
+      annotations.push({
+        x: 0.45, y: (Ei + Ef) / 2,
+        ax: 0.45, ay: (Ei + Ef) / 2,
+        axref: 'x', ayref: 'y',
+        xref: 'x',  yref: 'y',
+        showarrow: true, arrowhead: 2, arrowsize: 1.2,
+        arrowwidth: 1.5, arrowcolor: '#e74c3c',
+        text: `${wl} nm`,
+        font: { size: 9, color: '#e74c3c' },
+        xanchor: 'right'
+      });
+    }
+  }
+
+  Plotly.react('energy-plot', [], {
+    shapes, annotations,
+    xaxis: { visible: false, range: [0, 1.5] },
+    yaxis: {
+      title: 'Energy (eV)',
+      range: [E1 * 1.08, 1.5],
+      tickvals: En.slice(0, 6),
+      ticktext: En.slice(0, 6).map(e => e.toFixed(2)),
+      gridcolor: 'rgba(150,150,150,0.12)',
+      zeroline: true, zerolinecolor: '#aaa', zerolinewidth: 1
+    },
+    plot_bgcolor: 'white', paper_bgcolor: 'white',
+    margin: { l: 65, r: 220, t: 30, b: 40 },
+    font: { family: 'Georgia, serif', size: 11 }
+  }, { responsive: true });
+
+  // Click handler to read off energy
+  document.getElementById('energy-plot').on('plotly_click', data => {
+    const y = data.points?.[0]?.y;
+    if (y !== undefined) {
+      const n = Math.round(Math.sqrt(-13.6 / y));
+      document.getElementById('level-readout').innerHTML =
+        `n = ${n} &nbsp;|&nbsp; E = ${y.toFixed(4)} eV &nbsp;|&nbsp;
+         Binding energy = ${Math.abs(y).toFixed(4)} eV &nbsp;|&nbsp;
+         Ionisation from this level requires ${Math.abs(y).toFixed(3)} eV`;
+    }
+  });
+}
+
+function updateEnergyPlot(val) {
+  document.getElementById('n-max-label').textContent = `n = ${val}`;
+  buildEnergyPlot(parseInt(val));
+}
+
+// ════════════════════════════════════════════════════════
+// Section 4: Radial wavefunctions
+// ════════════════════════════════════════════════════════
+function buildWavefunctionPlot() {
+  const show = ['1s','2s','2p','3s','3p','3d'];
+  const traces = show.map((label, i) => ({
+    x: window.r_values,
+    y: wfData[label].prob,
+    name: label,
+    type: 'scatter', mode: 'lines',
+    line: { color: COLORS[i], width: 2 },
+    hovertemplate:
+      `<b>${label}</b><br>r = %{x:.2f} a₀<br>` +
+      `r²|R|² = %{y:.5f}<extra></extra>`
+  }));
+
+  Plotly.newPlot('wavefunction-plot', traces, {
+    xaxis: { title: 'r / a₀', range: [0, 40] },
+    yaxis: { title: 'r² |R_{nℓ}(r)|²' },
+    plot_bgcolor: 'white', paper_bgcolor: 'white',
+    margin: { l: 60, r: 20, t: 20, b: 50 },
+    legend: { title: { text: 'Orbital' } },
+    font: { family: 'Georgia, serif', size: 11 }
+  }, { responsive: true });
+}
+
+// ════════════════════════════════════════════════════════
+// Section 5: Orbital explorer
+// ════════════════════════════════════════════════════════
+const L_NAMES = ['s','p','d','f','g'];
+
+function updateOrbitalL() {
+  const n = parseInt(document.getElementById('orbital-n').value);
+  const sel = document.getElementById('orbital-l');
+  sel.innerHTML = '';
+  for (let l = 0; l < n; l++) {
+    const opt = document.createElement('option');
+    opt.value = l;
+    opt.textContent = `${l} (${L_NAMES[l]})`;
+    sel.appendChild(opt);
+  }
+}
+
+async function computeOrbital() {
+  const n = parseInt(document.getElementById('orbital-n').value);
+  const l = parseInt(document.getElementById('orbital-l').value);
+  const label = `${n}${L_NAMES[l]}`;
+
+  let prob, r_mp;
+
+  if (wfData[label]) {
+    // Already computed
+    prob = wfData[label].prob;
+    r_mp = wfData[label].r_mp;
+  } else {
+    // Compute on the fly with Pyodide
+    document.getElementById('orbital-readout').textContent = 'Computing...';
+    const result = await pyodide.runPythonAsync(`
+import numpy as np, json
+from scipy.special import genlaguerre, factorial
+
+n, l = ${n}, ${l}
+r    = np.linspace(0, ${n}*n*3 + 20, 2000)
+
+rho  = 2.0 * r / n
+norm = np.sqrt((2.0/n)**3 * factorial(n-l-1) / (2.0*n*factorial(n+l)**3))
+L    = genlaguerre(n-l-1, 2*l+1)(rho)
+psi  = norm * np.exp(-rho/2.0) * rho**l * L
+prob = r**2 * psi**2
+r_mp = float(r[np.argmax(prob)])
+
+json.dumps({'r': r.tolist(), 'prob': prob.tolist(), 'r_mp': r_mp})
+`);
+    const parsed = JSON.parse(result);
+    window.r_values_custom = parsed.r;
+    prob = parsed.prob;
+    r_mp = parsed.r_mp;
+    wfData[label] = { prob, r_mp, n, l };
+  }
+
+  const r_use = wfData[label].r_mp !== undefined
+    ? window.r_values
+    : window.r_values_custom;
+
+  const traces = [{
+    x: r_use, y: prob,
+    type: 'scatter', mode: 'lines',
+    line: { color: '#0984E3', width: 2.5 },
+    fill: 'tozeroy', fillcolor: 'rgba(9,132,227,0.08)',
+    name: label,
+    hovertemplate: `r = %{x:.2f} a₀<br>r²|R|² = %{y:.5f}<extra></extra>`
+  }];
+
+  const shapes = [{
+    type: 'line',
+    x0: r_mp, x1: r_mp,
+    y0: 0,    y1: 1,
+    yref: 'paper',
+    line: { color: '#e74c3c', width: 1.5, dash: 'dash' }
+  }];
+
+  Plotly.react('orbital-plot', traces, {
+    shapes,
+    annotations: [{
+      x: r_mp, y: 1, yref: 'paper',
+      text: `r<sub>mp</sub> = ${r_mp.toFixed(2)} a₀`,
+      showarrow: true, arrowhead: 2, ay: -30,
+      font: { color: '#e74c3c', size: 11 }
+    }],
+    xaxis: { title: 'r / a₀' },
+    yaxis: { title: 'r² |R_{nℓ}|²' },
+    title: { text: `Orbital ${label}: n=${n}, ℓ=${l}`, font: { size: 14 } },
+    plot_bgcolor: 'white', paper_bgcolor: 'white',
+    margin: { l: 60, r: 20, t: 50, b: 50 },
+    font: { family: 'Georgia, serif', size: 11 },
+    showlegend: false
+  }, { responsive: true });
+
+  const E = (-13.6 / (n*n)).toFixed(4);
+  document.getElementById('orbital-readout').innerHTML =
+    `<b>${label}</b> &nbsp;|&nbsp; n=${n}, ℓ=${l} &nbsp;|&nbsp;
+     E<sub>n</sub> = ${E} eV &nbsp;|&nbsp;
+     Most probable radius r<sub>mp</sub> = ${r_mp.toFixed(3)} a₀ &nbsp;|&nbsp;
+     ⟨r⟩ ≈ ${(n*n*(1 + 0.5*(1 - l*(l+1)/(n*n)))*1.5).toFixed(2)} a₀`;
+}
+
+// ════════════════════════════════════════════════════════
+// Section 6: Transitions table
+// ════════════════════════════════════════════════════════
+function buildTransitionsTable() {
+  const E1 = -13.6;
+  const series_defs = [
+    { name: 'Lyman',   nf: 1, ni_range: [2,3,4,5,6,7],   region: 'UV'      },
+    { name: 'Balmer',  nf: 2, ni_range: [3,4,5,6,7,8],   region: 'Visible' },
+    { name: 'Paschen', nf: 3, ni_range: [4,5,6,7,8,9],   region: 'IR'      },
+    { name: 'Brackett',nf: 4, ni_range: [5,6,7,8,9,10],  region: 'IR'      },
+  ];
+
+  let html = `<table class="table table-sm table-bordered data-table">
+    <thead class="table-light">
+      <tr>
+        <th>Series</th><th>Region</th>
+        <th>$n_i$</th><th>$n_f$</th>
+        <th>ΔE (eV)</th><th>λ (nm)</th><th>λ (Å)</th>
+      </tr>
+    </thead><tbody>`;
+
+  series_defs.forEach(s => {
+    s.ni_range.forEach((ni, idx) => {
+      const dE  = Math.abs(E1/(s.nf*s.nf) - E1/(ni*ni));
+      const wl  = 1240 / dE;
+      const rowClass = idx === 0 ? ' class="table-light"' : '';
+      html += `<tr${rowClass}>
+        <td>${idx === 0 ? `<b>${s.name}</b>` : ''}</td>
+        <td>${idx === 0 ? s.region : ''}</td>
+        <td>${ni}</td><td>${s.nf}</td>
+        <td>${dE.toFixed(3)}</td>
+        <td>${wl.toFixed(1)}</td>
+        <td>${(wl*10).toFixed(0)}</td>
+      </tr>`;
+    });
+  });
+
+  html += '</tbody></table>';
+  document.getElementById('transitions-table-container').innerHTML = html;
+
+  // Re-render MathJax for new content
+  if (window.MathJax) MathJax.typesetPromise();
+}
+
+// ════════════════════════════════════════════════════════
+// Section 7: Custom calculator
+// ════════════════════════════════════════════════════════
+function computeTransition() {
+  const ni = parseInt(document.getElementById('ni-input').value);
+  const nf = parseInt(document.getElementById('nf-input').value);
+  const E1 = -13.6;
+
+  if (nf >= ni) {
+    document.getElementById('transition-readout').textContent =
+      'Error: n_f must be less than n_i for an emission transition.';
+    return;
+  }
+
+  const Ei  = E1 / (ni*ni);
+  const Ef  = E1 / (nf*nf);
+  const dE  = Math.abs(Ef - Ei);
+  const wl  = 1240 / dE;
+
+  const series_names = {1:'Lyman',2:'Balmer',3:'Paschen',4:'Brackett',5:'Pfund'};
+  const regions = {1:'UV',2:'Visible (if 380–700 nm)',3:'IR',4:'IR',5:'IR'};
+  const series  = series_names[nf] || `Series to n=${nf}`;
+  const region  = regions[nf] || 'IR/Far-IR';
+
+  document.getElementById('transition-readout').innerHTML =
+    `<b>n=${ni} → n=${nf}</b> &nbsp;|&nbsp;
+     ΔE = <b>${dE.toFixed(4)} eV</b> &nbsp;|&nbsp;
+     λ = <b>${wl.toFixed(2)} nm</b> &nbsp;|&nbsp;
+     ${(wl*10).toFixed(1)} Å &nbsp;|&nbsp;
+     Series: <b>${series}</b> &nbsp;|&nbsp;
+     Region: ${region}`;
+}
+
+// ════════════════════════════════════════════════════════
+// TOC active link on scroll
+// ════════════════════════════════════════════════════════
+window.addEventListener('scroll', () => {
+  const sections  = document.querySelectorAll('h2[id]');
+  const tocLinks  = document.querySelectorAll('#toc-sidebar a');
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 120) current = s.id;
+  });
+  tocLinks.forEach(a => {
+    a.classList.toggle('active',
+      a.getAttribute('href') === '#' + current);
+  });
+});
+
+// ════════════════════════════════════════════════════════
+// Boot
+// ════════════════════════════════════════════════════════
+initPyodide();
+</script>
+
+</body>
+</html>

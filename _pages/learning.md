@@ -129,7 +129,7 @@ Work in progress:
 
 ## The Hydrogen Atom
 
-The hydrogen atom is the simplest bound quantum system — a single electron of charge $$-e$$ bound to a proton of charge $$+e$$ by the Coulomb potential:<br />
+The hydrogen atom is the simplest bound quantum system — a single electron of charge $$-e$$ bound to a proton of charge <b><span style="color: #4183C4;">$$+e$$</span></b> by the Coulomb potential:<br />
 &emsp; $$ V(r) = -\frac{e^2}{4\pi\epsilon_0 r} $$<br />
 The time-independent Schrödinger equation in spherical coordinates is:<br />
 &emsp; $$ \left[ -\frac{\hbar^2}{2m_e}\nabla^2 + V(r) \right] \psi(r,\theta,\phi) = E\psi(r,\theta,\phi) $$<br />

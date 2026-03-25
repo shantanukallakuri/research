@@ -17,52 +17,29 @@ execute:
 
 ## The Hydrogen Atom
 
-The hydrogen atom is the simplest bound quantum system — a single electron 
-of charge $-e$ bound to a proton of charge $+e$ by the Coulomb potential:
-
-$$
-V(r) = -\frac{e^2}{4\pi\epsilon_0 r}
-$$
-
+The hydrogen atom is the simplest bound quantum system — a single electron of charge $-e$ bound to a proton of charge $+e$ by the Coulomb potential:
+$$ V(r) = -\frac{e^2}{4\pi\epsilon_0 r} $$
 The time-independent Schrödinger equation in spherical coordinates is:
-
-$$
-\left[ -\frac{\hbar^2}{2m_e}\nabla^2 + V(r) \right] \psi(r,\theta,\phi) = E\psi(r,\theta,\phi)
-$$
-
+$$ \left[ -\frac{\hbar^2}{2m_e}\nabla^2 + V(r) \right] \psi(r,\theta,\phi) = E\psi(r,\theta,\phi) $$
 Separating variables, the wavefunction factorizes as:
-
-$$
-\psi_{n\ell m}(r,\theta,\phi) = R_{n\ell}(r)\, Y_\ell^m(\theta,\phi)
-$$
-
-where $R_{n\ell}$ are the radial wavefunctions and $Y_\ell^m$ are the 
-spherical harmonics.
+$$ \psi_{n\ell m}(r,\theta,\phi) = R_{n\ell}(r)\, Y_\ell^m(\theta,\phi) $$
+where $R_{n\ell}$ are the radial wavefunctions and $Y_\ell^m$ are the spherical harmonics.
 
 ---
 
 ## Energy Eigenvalues
 
 Solving the radial equation yields the quantized energy levels:
-
-$$
-E_n = -\frac{m_e e^4}{2\hbar^2} \cdot \frac{1}{(4\pi\epsilon_0)^2} \cdot \frac{1}{n^2}
-= -\frac{13.6 \text{ eV}}{n^2}, \quad n = 1, 2, 3, \ldots
-$$
-
-The ground state energy is $E_1 = -13.6\ \text{eV}$. The negative sign 
-reflects a bound state — energy must be supplied to ionize the atom. 
-The ionization energy is therefore $13.6\ \text{eV}$.
+$$ E_n = -\frac{m_e e^4}{2\hbar^2} \cdot \frac{1}{(4\pi\epsilon_0)^2} \cdot \frac{1}{n^2} = -\frac{13.6 \text{ eV}}{n^2}, \quad n = 1, 2, 3, \ldots $$
+The ground state energy is $E_1 = -13.6\ \text{eV}$. The negative sign reflects a bound state — energy must be supplied to ionize the atom. The ionization energy is therefore $13.6\ \text{eV}$.
 
 The **Bohr radius** sets the natural length scale:
-
-$$
-a_0 = \frac{4\pi\epsilon_0\hbar^2}{m_e e^2} \approx 0.529\ \text{Å}
-$$
+$$ a_0 = \frac{4\pi\epsilon_0\hbar^2}{m_e e^2} \approx 0.529\ \text{Å} $$
 
 ---
 
 ## Python: Computing Energy Levels
+
 ```{python}
 import numpy as np
 import plotly.graph_objects as go
@@ -81,13 +58,10 @@ for n, E in zip(n_vals, E_n):
 ---
 
 ## Interactive Energy Level Diagram
+
 ```{python}
 fig = go.Figure()
-
-colors = [
-    "#6C5CE7","#0984E3","#00B894","#FDCB6E",
-    "#E17055","#D63031","#A29BFE","#FD79A8","#55EFC4","#B2BEC3"
-]
+colors = ["#6C5CE7","#0984E3","#00B894","#FDCB6E","#E17055","#D63031","#A29BFE","#FD79A8","#55EFC4","#B2BEC3"]
 
 # Draw energy levels as horizontal lines
 for i, (n, E) in enumerate(zip(n_vals, E_n)):
@@ -152,20 +126,10 @@ fig.show()
 ## Radial Wavefunctions
 
 The first few radial wavefunctions $R_{n\ell}(r)$ are:
+$$ R_{10}(r) = 2\left(\frac{1}{a_0}\right)^{3/2} e^{-r/a_0} $$
+$$ R_{20}(r) = \frac{1}{\sqrt{2}}\left(\frac{1}{2a_0}\right)^{3/2}\left(2 - \frac{r}{a_0}\right)e^{-r/2a_0} $$
+$$ R_{21}(r) = \frac{1}{\sqrt{24}}\left(\frac{1}{2a_0}\right)^{3/2}\frac{r}{a_0}\,e^{-r/2a_0} $$
 
-$$
-R_{10}(r) = 2\left(\frac{1}{a_0}\right)^{3/2} e^{-r/a_0}
-$$
-
-$$
-R_{20}(r) = \frac{1}{\sqrt{2}}\left(\frac{1}{2a_0}\right)^{3/2}
-\left(2 - \frac{r}{a_0}\right)e^{-r/2a_0}
-$$
-
-$$
-R_{21}(r) = \frac{1}{\sqrt{24}}\left(\frac{1}{2a_0}\right)^{3/2}
-\frac{r}{a_0}\,e^{-r/2a_0}
-$$
 ```{python}
 from scipy.special import genlaguerre, factorial
 
@@ -216,13 +180,9 @@ fig2.show()
 ## Transition Energies & Spectral Series
 
 Photon energy for a transition $n_i \to n_f$ follows from the Rydberg formula:
-
-$$
-\Delta E = 13.6\left(\frac{1}{n_f^2} - \frac{1}{n_i^2}\right)\ \text{eV},
-\qquad \frac{1}{\lambda} = R_\infty\left(\frac{1}{n_f^2} - \frac{1}{n_i^2}\right)
-$$
-
+$$ \Delta E = 13.6\left(\frac{1}{n_f^2} - \frac{1}{n_i^2}\right)\ \text{eV},\qquad \frac{1}{\lambda} = R_\infty\left(\frac{1}{n_f^2} - \frac{1}{n_i^2}\right) $$
 where $R_\infty = 1.097 \times 10^7\ \text{m}^{-1}$ is the Rydberg constant.
+
 ```{python}
 series = {
     "Lyman (UV, nf=1)":   (1, range(2, 8)),
@@ -238,18 +198,4 @@ for name, (nf, ni_range) in series.items():
         lam = 1240 / abs(dE)
         print(f"{name:<25} {ni:>4}   {dE:>9.3f}   {lam:>9.1f}")
     print()
-```
-
----
-
-## Render to HTML
-
-To render this document, run from your terminal:
-```bash
-quarto render hydrogen.qmd --to html
-```
-
-Or to also produce a PDF alongside:
-```bash
-quarto render hydrogen.qmd --to html,pdf
 ```

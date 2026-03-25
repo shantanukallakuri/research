@@ -77,9 +77,9 @@ social:
 analytics:
   provider               : "goatcounter" # false (default), "google", "google-universal", "custom", "goatcounter"
   google:
-    tracking_id          : 
+    tracking_id          : "G-Y02NN9CNP4"
   goatcounter:
-    code		 : jayrobwilliams
+    code		 : shantanuk100
 
 
 # Site Author

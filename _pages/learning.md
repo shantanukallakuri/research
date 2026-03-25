@@ -10,27 +10,24 @@ toc_icon: "list"
 toc_sticky: true
 ---
 
-<script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+{% include sk/head/math_head.html %}
+{% include sk/head/plotly_head.html %}
+{% include sk/head/pyodide_head.html %}
 
 (Work in progress)
 
 ## Chapter-1: Atomic beginnings
 
-The hydrogen atom is the simplest bound quantum system — a single electron of charge $$-e$$ bound to a proton of charge <span style="color: #0038A8;"><b>$$+e$$</b></span> by the Coulomb potential:<br />
-
-<div style="background-color: #f6f8fa; border: 1px solid #ddd; border-radius: 6px; padding: 15px; font-family: monospace;">
-  <span style="color: #0038A8; font-weight: 900;">
-    <b>$$V(r) = -\frac{e^2}{4\pi\epsilon_0 r}$$</b>
-  </span>
-<div style="text-align: right; color: #666; font-size: 0.9em;">(1.1)</div></div>
-
+The hydrogen atom is the simplest bound quantum system — a single electron of charge {% include sk/components/eqvar.html var="-e" %} bound to a proton of charge {% include sk/components/eqvar.html var="+e" %} by the Coulomb potential:
+<br />
+{% include sk/components/eqbox.html eq="V(r) = -\frac{e^2}{4\pi\epsilon_0 r}" num="1.1" %}
+{% include sk/components/eqbox.html eq="E_n = -\frac{13.6\text{ eV}}{n^2}" num="1.2" %}
+{% include sk/components/eqbox.html eq="\psi_{n\ell m} = R_{n\ell}(r)\,Y_\ell^m(\theta,\phi)" num="1.3" %}
 The time-independent Schrödinger equation in spherical coordinates is:<br />
-&emsp; <span style="color: #0038A8;"><b>$$ \left[ -\frac{\hbar^2}{2m_e}\nabla^2 + V(r) \right] \psi(r,\theta,\phi) = E\psi(r,\theta,\phi) $$</b></span><br />
+&emsp; <span style="color: #4183C4;"><b>$$ \left[ -\frac{\hbar^2}{2m_e}\nabla^2 + V(r) \right] \psi(r,\theta,\phi) = E\psi(r,\theta,\phi) $$</b></span><br />
 Separating variables, the wavefunction factorizes as:<br />
-&emsp; <span style="color: #0038A8;"><b>$$ \psi_{n\ell m}(r,\theta,\phi) = R_{n\ell}(r)\, Y_\ell^m(\theta,\phi) $$</b></span><br />
-where <span style="color: #0038A8;"><b>$$R_{n\ell}$$</b></span> are the radial wavefunctions and <span style="color: #0038A8;"><b>$$Y_\ell^m$$</b></span> are the spherical harmonics.
+&emsp; <span style="color: #4183C4;"><b>$$ \psi_{n\ell m}(r,\theta,\phi) = R_{n\ell}(r)\, Y_\ell^m(\theta,\phi) $$</b></span><br />
+where <span style="color: #4183C4;"><b>$$R_{n\ell}$$</b></span> are the radial wavefunctions and <span style="color: #4183C4;"><b>$$Y_\ell^m$$</b></span> are the spherical harmonics.
 
 
 Damped Oscillator (Test plot)

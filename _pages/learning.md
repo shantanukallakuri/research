@@ -14,7 +14,7 @@ toc_sticky: true
 {% include sk/head/plotly_head.html %}
 {% include sk/head/pyodide_head.html %}
 
-(Work under progress)
+(Work in progress)
 
 ## Chapter-1: Atomic beginnings
 
@@ -24,11 +24,10 @@ The hydrogen atom is the simplest bound quantum system — a single electron of 
 {% include sk/components/eqbox.html eq="E_n = -\frac{13.6\text{ eV}}{n^2}" num="1.2" %}
 {% include sk/components/eqbox.html eq="\psi_{n\ell m} = R_{n\ell}(r)\,Y_\ell^m(\theta,\phi)" num="1.3" %}
 The time-independent Schrödinger equation in spherical coordinates is:<br />
-&emsp; <span style="color: #4183C4;"><b>$$ \left[ -\frac{\hbar^2}{2m_e}\nabla^2 + V(r) \right] \psi(r,\theta,\phi) = E\psi(r,\theta,\phi) $$</b></span><br />
+{% include sk/components/eqbox.html eq="\left[ -\frac{\hbar^2}{2m_e}\nabla^2 + V(r) \right] \psi(r,\theta,\phi) = E\psi(r,\theta,\phi)" num="1.4" %}
 Separating variables, the wavefunction factorizes as:<br />
-&emsp; <span style="color: #4183C4;"><b>$$ \psi_{n\ell m}(r,\theta,\phi) = R_{n\ell}(r)\, Y_\ell^m(\theta,\phi) $$</b></span><br />
-where <span style="color: #4183C4;"><b>$$R_{n\ell}$$</b></span> are the radial wavefunctions and <span style="color: #4183C4;"><b>$$Y_\ell^m$$</b></span> are the spherical harmonics.
-
+{% include sk/components/eqbox.html eq="\psi_{n\ell m}(r,\theta,\phi) = R_{n\ell}(r)\, Y_\ell^m(\theta,\phi)" num="1.5" %}
+where {% include sk/components/eqvar.html var="R_{n\ell}" %} are the radial wavefunctions and {% include sk/components/eqvar.html var="Y_\ell^m" %} are the spherical harmonics.
 
 Damped Oscillator (Test plot)
 <div class="demo-section">

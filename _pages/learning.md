@@ -33,7 +33,7 @@ Separating variables, the wavefunction factorizes as:<br />
 where <span style="color: #0038A8;"><b>$$R_{n\ell}$$</b></span> are the radial wavefunctions and <span style="color: #0038A8;"><b>$$Y_\ell^m$$</b></span> are the spherical harmonics.
 
 
-## 1. Damped Oscillator (Test plot)
+Damped Oscillator (Test plot)
 <div class="demo-section">
 <div style="margin-bottom:0.8rem;">
 <label style="font-size:0.9rem;">
@@ -50,8 +50,7 @@ oninput="document.getElementById('slider-gammaVal').textContent=parseFloat(this.
 </div>
 <script src="/assets/js/oscillator-slider.js"></script>
 
-## 2. Hydrogen Atom Wave Functions
-
+Hydrogen Atom Wave Functions
 <div class="demo-section">
 <div style="margin-bottom:0.8rem; display:flex; flex-wrap:wrap; gap:1.2rem; align-items:flex-start;">
 <label style="font-size:0.9rem;">

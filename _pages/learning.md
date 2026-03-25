@@ -129,13 +129,17 @@ Work in progress:
 
 ## The Hydrogen Atom
 
-The hydrogen atom is the simplest bound quantum system — a single electron of charge $$-e$$ bound to a proton of charge <b><span style="color: #4183C4;">$$+e$$</span></b> by the Coulomb potential:<br />
-&emsp; $$ V(r) = -\frac{e^2}{4\pi\epsilon_0 r} $$<br />
+The hydrogen atom is the simplest bound quantum system — a single electron of charge $$-e$$ bound to a proton of charge <span style="color: #4183C4;"><b>$$+e$$</b></span> by the Coulomb potential:<br />
+
+~~~
+&emsp; <span style="color: #4183C4;"><b>$$ V(r) = -\frac{e^2}{4\pi\epsilon_0 r} $$</b></span><br />
+~~~
+
 The time-independent Schrödinger equation in spherical coordinates is:<br />
-&emsp; $$ \left[ -\frac{\hbar^2}{2m_e}\nabla^2 + V(r) \right] \psi(r,\theta,\phi) = E\psi(r,\theta,\phi) $$<br />
+&emsp; <span style="color: #4183C4;"><b>$$ \left[ -\frac{\hbar^2}{2m_e}\nabla^2 + V(r) \right] \psi(r,\theta,\phi) = E\psi(r,\theta,\phi) $$</b></span><br />
 Separating variables, the wavefunction factorizes as:<br />
-&emsp; $$ \psi_{n\ell m}(r,\theta,\phi) = R_{n\ell}(r)\, Y_\ell^m(\theta,\phi) $$<br />
-where $R_{n\ell}$ are the radial wavefunctions and $Y_\ell^m$ are the spherical harmonics.
+&emsp; <span style="color: #4183C4;"><b>$$ \psi_{n\ell m}(r,\theta,\phi) = R_{n\ell}(r)\, Y_\ell^m(\theta,\phi) $$</b></span><br />
+where <span style="color: #4183C4;"><b>$$R_{n\ell}$$</b></span> are the radial wavefunctions and <span style="color: #4183C4;"><b>$$Y_\ell^m$$</b></span> are the spherical harmonics.
 
 
 ## 1. Damped Oscillator (Test plot)

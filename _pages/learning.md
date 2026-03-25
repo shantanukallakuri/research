@@ -123,8 +123,20 @@ Damping γ:
 -->
 <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
 
 Work in progress:
+
+## The Hydrogen Atom
+
+The hydrogen atom is the simplest bound quantum system — a single electron of charge $$-e$$ bound to a proton of charge $$+e$$ by the Coulomb potential:<br />
+&emsp; $$ V(r) = -\frac{e^2}{4\pi\epsilon_0 r} $$<br />
+The time-independent Schrödinger equation in spherical coordinates is:<br />
+&emsp; $$ \left[ -\frac{\hbar^2}{2m_e}\nabla^2 + V(r) \right] \psi(r,\theta,\phi) = E\psi(r,\theta,\phi) $$<br />
+Separating variables, the wavefunction factorizes as:<br />
+&emsp; $$ \psi_{n\ell m}(r,\theta,\phi) = R_{n\ell}(r)\, Y_\ell^m(\theta,\phi) $$<br />
+where $R_{n\ell}$ are the radial wavefunctions and $Y_\ell^m$ are the spherical harmonics.
+
 
 ## 1. Damped Oscillator (Test plot)
 <div class="demo-section">

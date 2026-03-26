@@ -14,7 +14,7 @@ toc_sticky: true
 {% include sk/head/plotly_head.html %}
 {% include sk/head/pyodide_head.html %}
 
-(Work in progress)
+(Work under progress)
 
 ## Chapter-1: Atomic beginnings
 

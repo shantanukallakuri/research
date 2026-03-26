@@ -1,10 +1,33 @@
-<div style="background:#f6f8fa;border:1px solid #ddd;border-radius:6px;
-            padding:15px;font-family:monospace;">
-  <span style="color:#4183C4;font-weight:900;">
-    <b>$${{ include.eq }}$$</b>
-  </span>
-  {% if include.num %}
-  <div style="text-align:right;color:#666;font-size:0.9em;">({{ include.num }})</div>
+<div style="margin: 1.2rem 0;">
+  <div style="
+    display: inline-block;
+    background: #f6f8fa;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-family: monospace;
+    position: relative;
+  ">
+    <span style="color: #4183C4; font-weight: 900;">
+      $${{ include.eq }}$$
+    </span>
+    {% if include.num %}
+    <span style="
+      color: #666;
+      font-size: 0.85em;
+      font-family: sans-serif;
+      font-weight: normal;
+      margin-left: 1.5rem;
+      vertical-align: middle;
+    ">({{ include.num }})</span>
+    {% endif %}
+  </div>
+  {% if include.label %}
+  <div style="
+    color: #999; font-size: 0.8em;
+    font-family: sans-serif;
+    font-style: italic;
+    margin-top: 0.3rem;
+  ">{{ include.label }}</div>
   {% endif %}
 </div>
-<br/>

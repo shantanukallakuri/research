@@ -16,7 +16,8 @@ toc_sticky: true
 
 (Work under progress)
 
-## Chapter-1: Atomic beginnings
+## 1. Atomic beginnings
+### 1.1 Hydrogen
 
 The hydrogen atom is the simplest bound quantum system — a single electron of charge {% include sk/components/eqvar.html var="-e" %} bound to a proton of charge {% include sk/components/eqvar.html var="+e" %} by the Coulomb potential:
 <br />

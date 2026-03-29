@@ -1,0 +1,7 @@
+<div id="{{ include.id }}" style="display:flex; align-items:baseline; width:100%; font-style:regular;">
+  <span style="display:inline-block; text-align:left;">\({{ include.eq }}\)</span>
+  <span style="flex:1;"></span>
+  <span style="white-space:nowrap; text-align:right;">
+    {{ include.leader | default: "....." }} (eq {{ include.num }})
+  </span>
+</div>

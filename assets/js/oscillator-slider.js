@@ -60,10 +60,12 @@ async function sliderRunCalc() {
     
     // Execute the Python function and pass the gamma value
     const result = await pyodide.runPythonAsync(`run_calc_slider(${gamma})`);
-    
-    // Convert Python lists/arrays into a JavaScript array of arrays [t, y, ep, en]
-    const [t, y, ep, en] = result.toJs();
+    const converted = result.toJs();
+    result.destroy?.();
 
+    // Convert Python lists/arrays into a JavaScript array of arrays [t, y, ep, en]
+    const [t, y, ep, en] = converted;
+    
     // Use Plotly.react for an efficient "partial update" of the graph
     Plotly.react('slider-pyplot', [
       { x: t, y: y,  name: 'x(t)',      type: 'scatter', line: { color: '#0077cc' } },

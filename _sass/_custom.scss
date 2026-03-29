@@ -38,3 +38,363 @@
 .container:hover .overlay {
   opacity: 0.25;
 }
+
+/* Topic pages: full-height darker royal blue strip + flex row */
+$topic-nav-bg: #1e40af; /* darker royal / indigo blue */
+$topic-nav-border: rgba(255, 255, 255, 0.18);
+$topic-nav-text: #f8fafc;
+$topic-nav-muted: #cbd5f5;
+
+@include breakpoint($large) {
+  /* Use more horizontal space (theme #main is capped ~1280px) */
+  #main:has(> .sidebar.topic-sidebar) {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    max-width: min(96vw, 1400px);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  #main:has(> .sidebar.topic-sidebar) > .sidebar.topic-sidebar {
+    float: none !important;
+    flex: 0 0 17%;
+    min-width: 10.5rem;
+    max-width: 15rem;
+    margin-bottom: 0;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+
+    /* Stay in view while scrolling main column; scroll long TOC inside */
+    position: sticky;
+    top: 5.5rem;
+    /* Match viewport so blue + border fill the column, not just TOC text height */
+    min-height: calc(100vh - 6rem);
+    max-height: calc(100vh - 6rem);
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    /* Full-height column: color + vertical rule (not a small inner box) */
+    background: $topic-nav-bg;
+    border: 0;
+    border-right: 1px solid $topic-nav-border;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 1rem 0.75rem 1.25rem;
+  }
+
+  #main:has(> .sidebar.topic-sidebar) > .page.topic-article {
+    float: none !important;
+    flex: 1 1 auto;
+    min-width: 0;
+    width: auto !important;
+    max-width: none;
+    margin-left: 0;
+    padding-left: 1.25rem !important;
+  }
+}
+
+/* Strip Minimal Mistakes .toc “card” inside topic sidebar only */
+.topic-sidebar .toc {
+  font-family: inherit !important;
+  letter-spacing: 0 !important;
+  color: $topic-nav-text !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+  flex: 0 1 auto;
+}
+
+.topic-sidebar .toc .nav__title,
+.topic-sidebar .toc h4.nav__title {
+  color: $topic-nav-text !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  font-size: 0.88rem !important; /* ~80% of 1.1rem */
+  font-weight: 600 !important;
+  padding: 0 0 0.5rem 0 !important;
+  margin: 0 0 0.65rem 0 !important;
+  border-bottom: 1px solid $topic-nav-border !important;
+}
+
+.topic-sidebar .toc__menu {
+  font-size: 0.8rem !important; /* ~80% of 1rem */
+}
+
+.topic-sidebar .toc__menu a {
+  display: block !important;
+  padding: 0.3rem 0 !important;
+  color: $topic-nav-muted !important;
+  font-size: 0.8rem !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  border-bottom: 0 !important;
+  background: transparent !important;
+  text-decoration: none !important;
+
+  &:hover {
+    color: #fff !important;
+    background: transparent !important;
+  }
+}
+
+/*
+ * Nested TOC (topic layout uses ordered lists): browser UA padding on nested ol
+ * was the main gap — theme rules only target li ul, not li ol.
+ */
+.topic-sidebar .toc__menu li > ol,
+.topic-sidebar .toc__menu li > ul {
+  margin: 0.1rem 0 0 0 !important;
+  padding-left: 0.4rem !important;
+}
+
+.topic-sidebar .toc__menu li ol > li a,
+.topic-sidebar .toc__menu li ul > li a {
+  padding-left: 0.15rem !important;
+  font-size: 0.75rem !important;
+}
+
+.topic-sidebar .toc__menu li ol li ol > li a,
+.topic-sidebar .toc__menu li ul li ul > li a {
+  padding-left: 0.35rem !important;
+}
+
+.topic-sidebar .toc__menu li ol li ol li ol > li a,
+.topic-sidebar .toc__menu li ul li ul li ul > li a {
+  padding-left: 0.55rem !important;
+}
+
+.topic-sidebar .toc__menu li ol li ol li ol li ol > li a,
+.topic-sidebar .toc__menu li ul li ul li ul li ul > li a {
+  padding-left: 0.75rem !important;
+}
+
+.topic-sidebar .toc__menu li ol li ol li ol li ol li ol > li a,
+.topic-sidebar .toc__menu li ul li ul li ul li ul li ul > li a {
+  padding-left: 0.95rem !important;
+}
+
+/* Scroll-spy: current section in TOC */
+.topic-sidebar .toc__menu a.active {
+  color: #fff !important;
+  font-weight: 600 !important;
+  background: rgba(255, 255, 255, 0.14) !important;
+  border-radius: 4px;
+  padding-left: 0.32rem !important;
+  margin-left: -0.32rem;
+  border-left: 3px solid rgba(255, 255, 255, 0.95);
+}
+
+/*
+ * Main column: Herz research.html–style reading layout
+ * https://www-herz.physics.ox.ac.uk/research.html
+ */
+
+/* Dark bar: matches details.topic-code-fold summary strip + bordered box for headings */
+%topic-content-dark-bar-fill {
+  color: #e8e8e8;
+  background: #2d2d2d;
+  padding: 0.45rem 0.75rem;
+  font-weight: 600;
+}
+
+%topic-content-dark-bar-box {
+  @extend %topic-content-dark-bar-fill;
+  border: 1px solid #2a2a2a;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.topic-article {
+  background: #fff;
+}
+
+.topic-article .page__inner-wrap {
+  padding-top: 0.25rem;
+}
+
+.topic-article .page__title {
+  font-size: 1.85rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.topic-article .page__content {
+  color: #222;
+  font-size: 1rem;
+  line-height: 1.65;
+  max-width: 50rem;
+
+  p {
+    margin: 0.65rem 0 1rem;
+  }
+
+  h2 {
+    @extend %topic-content-dark-bar-box;
+    margin-top: 2rem;
+    margin-bottom: 0.65rem;
+    font-size: 1.05rem;
+    line-height: 1.35;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  h3 {
+    @extend %topic-content-dark-bar-box;
+    margin-top: 1.35rem;
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+    line-height: 1.35;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1.5rem 0;
+  }
+
+  a {
+    color: #003399;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+
+    &:hover {
+      color: #001a66;
+    }
+  }
+
+  /* Two-column theme blocks (thumbnail | prose), like Herz tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0 1.75rem;
+    font-size: 0.98rem;
+    line-height: 1.55;
+  }
+
+  th,
+  td {
+    border: 1px solid #999;
+    padding: 0.75rem 0.9rem;
+    vertical-align: top;
+  }
+
+  th {
+    background: #f3f3f3;
+    color: #111;
+    font-weight: 600;
+    text-align: left;
+  }
+
+  tbody tr:nth-child(odd) {
+    background: #fafafa;
+  }
+
+  ul,
+  ol {
+    margin: 0.5rem 0 1rem 1.5rem;
+  }
+
+  li {
+    margin: 0.25rem 0;
+  }
+
+  strong {
+    font-weight: 600;
+    color: #111;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  /*
+   * Raw <details><pre><code> in Markdown (no Rouge) — dark block, still collapsible.
+   * Use class="topic-code-fold" on <details>.
+   */
+  details.topic-code-fold {
+    margin: 0.8rem 0;
+    border: 1px solid #2a2a2a;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+
+    summary {
+      @extend %topic-content-dark-bar-fill;
+      cursor: pointer;
+      font-size: 0.9rem;
+      list-style: none;
+      user-select: none;
+
+      &::-webkit-details-marker {
+        display: none;
+      }
+
+      &::before {
+        content: '\25B6\00a0';
+        display: inline-block;
+        font-size: 0.75em;
+        opacity: 0.9;
+        margin-right: 0.35rem;
+      }
+    }
+
+    &[open] > summary::before {
+      content: '\25BC\00a0';
+    }
+
+    pre {
+      margin: 0;
+      padding: 0.85rem 1rem;
+      background: #1e1e1e;
+      color: #d4d4d4;
+      font-family: $monospace;
+      font-size: $type-size-syntax;
+      line-height: 1.65;
+      overflow-x: auto;
+      border: 0;
+      border-radius: 0;
+    }
+
+    pre code {
+      background: transparent !important;
+      color: inherit !important;
+      font-family: inherit !important;
+      font-size: inherit !important;
+      padding: 0 !important;
+      border: 0 !important;
+      box-shadow: none !important;
+    }
+
+    pre code[class*='language-'] {
+      white-space: pre;
+    }
+  }
+}

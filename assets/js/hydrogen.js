@@ -56,7 +56,9 @@ async function wfRunCalc() {
     const result = await pyodide.runPythonAsync(
       `hydrogen_radial(${n}, ${l}, "${plotType}")`
     );
-    const [r, y, nodeCount, energy] = result.toJs();
+    const radialConverted = result.toJs();
+    result.destroy?.();
+    const [r, y, nodeCount, energy] = radialConverted;
 
     const isProb  = plotType === "prob";
     const yLabel  = isProb ? "r²|ψ(r)|²" : "ψ(r)";
@@ -89,7 +91,9 @@ async function wfRunCalc() {
     const orbResult = await pyodide.runPythonAsync(
       `hydrogen_orbital_slice(${n}, ${l})`
     );
-    const [xGrid, zGrid, psiGrid, orbLabel] = orbResult.toJs();
+    const orbitalConverted = orbResult.toJs();
+    orbResult.destroy?.();
+    const [xGrid, zGrid, psiGrid, orbLabel] = orbitalConverted;
 
     const xArr   = Array.from(xGrid);
     const zArr   = Array.from(zGrid);

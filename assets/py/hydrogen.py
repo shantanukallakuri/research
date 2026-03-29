@@ -54,12 +54,19 @@ def legendre_assoc(l, m, x):
 
 def R_nl(n, l, r):
     """Radial wave function R_nl(r) at a single r value (a0 units)."""
-    nr   = n - l - 1
-    norm = math.sqrt(
-        (2.0 / n)**3 * factorial(nr) / (2.0 * n * factorial(n + l)**3)
+    nr = n - l - 1
+    if nr < 0:
+        return 0.0
+
+    rho = 2.0 * r / n
+
+    # Standard hydrogen radial normalization (a0 = 1 units):
+    # N = (2/n)^(3/2) * sqrt((n-l-1)! / (2n * (n+l)!))
+    norm = (2.0 / n) ** 1.5 * math.sqrt(
+        factorial(nr) / (2.0 * n * factorial(n + l))
     )
-    rho  = 2.0 * r / n
-    return -norm * math.exp(-r / n) * (rho**l) * laguerre_assoc(nr, 2*l + 1, rho)
+
+    return norm * math.exp(-rho / 2.0) * (rho ** l) * laguerre_assoc(nr, 2 * l + 1, rho)
 
 
 def hydrogen_radial(n, l, plot_type="psi"):

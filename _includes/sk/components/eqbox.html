@@ -1,4 +1,5 @@
 <div style="margin: 1.2rem 0;">
+
   <div style="
     display: inline-block;
     background: #f6f8fa;
@@ -8,9 +9,11 @@
     font-family: monospace;
     position: relative;
   ">
+  
     <span style="color: #4183C4; font-weight: 900;">
       $${{ include.eq }}$$
     </span>
+
     {% if include.num %}
     <span style="
       color: #666;
@@ -21,7 +24,9 @@
       vertical-align: middle;
     ">({{ include.num }})</span>
     {% endif %}
+
   </div>
+
   {% if include.label %}
   <div style="
     color: #999; font-size: 0.8em;
@@ -30,4 +35,5 @@
     margin-top: 0.3rem;
   ">{{ include.label }}</div>
   {% endif %}
+  
 </div>

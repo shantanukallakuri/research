@@ -45,6 +45,11 @@ $topic-nav-border: rgba(255, 255, 255, 0.18);
 $topic-nav-text: #f8fafc;
 $topic-nav-muted: #cbd5f5;
 
+/* topic-page-uncolored: light sidebar, navy text */
+$topic-uncolored-navy: #1e3a8a;
+$topic-uncolored-muted: #64748b;
+$topic-uncolored-border: #e2e8f0;
+
 @include breakpoint($large) {
   /* Use more horizontal space (theme #main is capped ~1280px) */
   #main:has(> .sidebar.topic-sidebar) {
@@ -85,6 +90,11 @@ $topic-nav-muted: #cbd5f5;
     border-radius: 0;
     box-shadow: none;
     padding: 1rem 0.75rem 1.25rem;
+  }
+
+  #main:has(> .sidebar.topic-sidebar) > .sidebar.topic-sidebar.topic-sidebar--uncolored {
+    background: #fff;
+    border-right: 1px solid $topic-uncolored-border;
   }
 
   #main:has(> .sidebar.topic-sidebar) > .page.topic-article {
@@ -189,6 +199,34 @@ $topic-nav-muted: #cbd5f5;
   padding-left: 0.32rem !important;
   margin-left: -0.32rem;
   border-left: 3px solid rgba(255, 255, 255, 0.95);
+}
+
+.topic-sidebar.topic-sidebar--uncolored .toc {
+  color: $topic-uncolored-navy !important;
+}
+
+.topic-sidebar.topic-sidebar--uncolored .toc .nav__title,
+.topic-sidebar.topic-sidebar--uncolored .toc h4.nav__title {
+  color: $topic-uncolored-navy !important;
+  border-bottom-color: $topic-uncolored-border !important;
+}
+
+.topic-sidebar.topic-sidebar--uncolored .toc__menu a {
+  color: $topic-uncolored-muted !important;
+
+  &:hover {
+    color: $topic-uncolored-navy !important;
+  }
+}
+
+.topic-sidebar.topic-sidebar--uncolored .toc__menu a.active {
+  color: $topic-uncolored-navy !important;
+  font-weight: 600 !important;
+  background: rgba(30, 58, 138, 0.1) !important;
+  border-radius: 4px;
+  padding-left: 0.32rem !important;
+  margin-left: -0.32rem;
+  border-left: 3px solid $topic-uncolored-navy;
 }
 
 /*

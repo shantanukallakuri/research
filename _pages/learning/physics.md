@@ -1,6 +1,6 @@
 ---
 title: "Physics"
-layout: topic-page
+layout: topic-page-uncolored
 permalink: /learning/physics/
 author_profile: false
 toc: true

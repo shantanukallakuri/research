@@ -234,19 +234,38 @@ $topic-uncolored-border: #e2e8f0;
  * https://www-herz.physics.ox.ac.uk/research.html
  */
 
-/* Dark bar: matches details.topic-code-fold summary strip + bordered box for headings */
-%topic-content-dark-bar-fill {
-  color: #e8e8e8;
-  background: #2d2d2d;
+/* Topic headings: h2 = darker peach; h3 = lighter peach (former code fills) */
+$topic-section-bg: #edd5c8;
+$topic-section-text: #2a2a2a;
+$topic-section-border: #d4beb0;
+
+$topic-subsection-bg: #f5ebe4;
+$topic-subsection-text: #1e1e1e;
+$topic-subsection-border: #e0d0c4;
+
+/* Code (details summary + pre, Rouge): former subsection grey — both same fill */
+$topic-code-bg: #e8e8e8;
+$topic-code-text: #222;
+$topic-code-border: #d0d0d0;
+
+%topic-section-heading {
+  color: $topic-section-text;
+  background: $topic-section-bg;
   padding: 0.45rem 0.75rem;
   font-weight: 600;
+  border: 1px solid $topic-section-border;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
-%topic-content-dark-bar-box {
-  @extend %topic-content-dark-bar-fill;
-  border: 1px solid #2a2a2a;
+%topic-subsection-heading {
+  color: $topic-subsection-text;
+  background: $topic-subsection-bg;
+  padding: 0.45rem 0.75rem;
+  font-weight: 600;
+  border: 1px solid $topic-subsection-border;
   border-radius: 4px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
 }
 
 .topic-article {
@@ -279,7 +298,7 @@ $topic-uncolored-border: #e2e8f0;
   }
 
   h2 {
-    @extend %topic-content-dark-bar-box;
+    @extend %topic-section-heading;
     margin-top: 2rem;
     margin-bottom: 0.65rem;
     font-size: 1.05rem;
@@ -296,7 +315,7 @@ $topic-uncolored-border: #e2e8f0;
   }
 
   h3 {
-    @extend %topic-content-dark-bar-box;
+    @extend %topic-subsection-heading;
     margin-top: 1.35rem;
     margin-bottom: 0.4rem;
     font-size: 0.95rem;
@@ -309,6 +328,23 @@ $topic-uncolored-border: #e2e8f0;
       &:hover {
         text-decoration: underline;
       }
+    }
+  }
+
+  /* Rouge / fenced code blocks — same light grey as subsection fill */
+  div.highlighter-rouge,
+  figure.highlight {
+    background-color: $topic-code-bg !important;
+    border-color: $topic-code-border !important;
+    color: $topic-code-text;
+
+    &:before {
+      background-color: $topic-code-bg;
+      color: $topic-code-text;
+    }
+
+    .highlight {
+      color: $topic-code-text;
     }
   }
 
@@ -379,13 +415,16 @@ $topic-uncolored-border: #e2e8f0;
    */
   details.topic-code-fold {
     margin: 0.8rem 0;
-    border: 1px solid #2a2a2a;
+    border: 1px solid $topic-code-border;
     border-radius: 4px;
     overflow: hidden;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 
     summary {
-      @extend %topic-content-dark-bar-fill;
+      color: $topic-code-text;
+      background: $topic-code-bg;
+      padding: 0.45rem 0.75rem;
+      font-weight: 600;
       cursor: pointer;
       font-size: 0.9rem;
       list-style: none;
@@ -411,8 +450,8 @@ $topic-uncolored-border: #e2e8f0;
     pre {
       margin: 0;
       padding: 0.85rem 1rem;
-      background: #1e1e1e;
-      color: #d4d4d4;
+      background: $topic-code-bg;
+      color: $topic-code-text;
       font-family: $monospace;
       font-size: $type-size-syntax;
       line-height: 1.65;
@@ -434,5 +473,108 @@ $topic-uncolored-border: #e2e8f0;
     pre code[class*='language-'] {
       white-space: pre;
     }
+  }
+
+  /* Pyodide + Plotly demos on learning/physics/ */
+  .physics-demos {
+    max-width: 520px;
+  }
+
+  .physics-slider-label {
+    font-size: 0.9rem;
+    display: block;
+  }
+
+  .physics-val {
+    font-weight: 600;
+    color: #0077cc;
+  }
+
+  .physics-hslider {
+    width: 100%;
+    margin-top: 0.35rem;
+  }
+
+  .physics-plot-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 0.5rem;
+  }
+
+  .physics-plot-frame {
+    flex: 1;
+    min-width: 0;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 0.5rem;
+    background: #fafafa;
+  }
+
+  .physics-plot-inner {
+    width: 100%;
+  }
+
+  .physics-vslider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    width: 2.75rem;
+  }
+
+  .physics-vslider-cap {
+    font-size: 0.7rem;
+    color: #555;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+
+  .physics-vslider-track {
+    height: 200px;
+    display: flex;
+    align-items: center;
+  }
+
+  .physics-vslider input[type='range'] {
+    width: 200px;
+    height: 26px;
+    transform: rotate(-90deg);
+    transform-origin: center;
+  }
+
+  .physics-wf-radios {
+    margin-bottom: 0.5rem;
+
+    label {
+      font-size: 0.9rem;
+      margin-right: 1rem;
+    }
+  }
+
+  .physics-panel {
+    margin-bottom: 1rem;
+  }
+
+  .physics-panel-title {
+    font-weight: 600;
+    font-size: 0.85rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .physics-status {
+    font-size: 0.85rem;
+    color: #555;
+    margin-top: 0.5rem;
+  }
+
+  .physics-status--spaced {
+    margin-top: 0.75rem;
+  }
+
+  .physics-debug {
+    font-size: 0.8rem;
+    color: red;
+    margin-top: 0.5rem;
   }
 }

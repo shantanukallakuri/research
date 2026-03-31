@@ -1,8 +1,8 @@
 ---
 title: "Chemistry"
-layout: topic-page
+layout: topic-page-uncolored
 permalink: /learning/chemistry/
-author_profile: false
+author_profile: true
 toc: true
 toc_label: "Contents"
 toc_icon: "list"

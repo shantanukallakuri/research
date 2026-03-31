@@ -1,6 +1,12 @@
 ---
 permalink: /teaching/
+layout: topic-page-uncolored
 title: "Teaching"
+author_profile: true
+toc: true
+toc_label: "Contents"
+toc_icon: "list"
+toc_sticky: true
 ---
 
 Teaching is important to me for various reasons, especially due to the central impact it has in bringing about collective harmony and progress among people. My initiative [chemystery.org](https://www.chemystery.org/) was also born out of this motivation -- in an attempt to become a reference of sorts for scientific concepts that are difficult to understand while sparking curiosity to learn more within those spaces. As such, I will venture to present both these sites in a concise and simple form. 

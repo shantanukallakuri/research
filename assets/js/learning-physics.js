@@ -48,6 +48,10 @@ pyReady.then(function () {
   if (b) b.textContent = "Ready.";
   sliderRunCalc();
   wfRunCalc();
+  var nr = document.getElementById("wf-nInput-rad");
+  if (nr) wfClampLForN(document.getElementById("wf-lInput-rad"), document.getElementById("wf-lVal-rad"), parseInt(nr.value, 10));
+  var no = document.getElementById("wf-nInput-orb");
+  if (no) wfClampLForN(document.getElementById("wf-lInput-orb"), document.getElementById("wf-lVal-orb"), parseInt(no.value, 10));
 });
 
 var debouncedSliderRun = debounce(sliderRunCalc, 80);
@@ -80,7 +84,8 @@ async function sliderRunCalc() {
         { x: c[0], y: c[3], name: "-env", type: "scatter", line: { color: "#e05c00", dash: "dash" } },
       ],
       physLayout({
-        title: "gamma=" + g.toFixed(2) + ", t_end=" + tm.toFixed(1),
+        title: "",
+        margin: { t: 12, l: 52, r: 12, b: 48 },
         xaxis: { title: String(c[6]), range: xR, autorange: false },
         yaxis: { title: String(c[7]), range: yR, autorange: false },
       }),
@@ -88,7 +93,7 @@ async function sliderRunCalc() {
     );
     var t = c[0];
     var pct = (1 - Math.exp(-2 * g * t[t.length - 1])) * 100;
-    out.textContent = "gamma=" + g.toFixed(2) + " t_end=" + tm.toFixed(1) + " dissipated ~" + pct.toFixed(1) + "%";
+    out.textContent = "gamma=" + g.toFixed(2) + " dissipated ~" + pct.toFixed(1) + "%";
     if (dbg) dbg.textContent = "";
   } catch (e) {
     if (dbg) dbg.textContent = e.message;
@@ -148,10 +153,10 @@ async function wfRunCalc() {
       "wf-pyplot",
       traces,
       physLayout({
-        title: "n=" + nR + " l=" + lR,
+        title: "",
         xaxis: { title: String(R[7]), range: xR, autorange: false },
         yaxis: { title: yT, range: yR, autorange: false },
-        margin: { t: 45, l: 50, r: 20, b: 50 },
+        margin: { t: 12, l: 50, r: 20, b: 50 },
       }),
       PHYS_PLOTLY_CONFIG
     );
@@ -177,10 +182,10 @@ async function wfRunCalc() {
         },
       ],
       physLayout({
-        title: String(O[3]) + " xz",
+        title: "",
         xaxis: { title: String(O[5]), range: ax, autorange: false, scaleanchor: "y", scaleratio: 1 },
         yaxis: { title: String(O[6]), range: ax, autorange: false },
-        margin: { t: 45, l: 50, r: 60, b: 50 },
+        margin: { t: 12, l: 50, r: 60, b: 50 },
       }),
       PHYS_PLOTLY_CONFIG
     );

@@ -3,7 +3,10 @@ MathJax = {
   tex: {
     inlineMath:  [['$','$'], ['\\(','\\)']],
     displayMath: [['$$','$$'], ['\\[','\\]']],
-    packages:    {'[+]': ['mhchem']}
+    packages:    {'[+]': ['mhchem', 'html']},
+    macros: {
+      fontsize: ['\\style{font-size: #1}{#2}', 2]
+    }
   },
   options: {
     skipHtmlTags: ['script','noscript','style','textarea','pre']

@@ -6,7 +6,6 @@ OSCILLATOR_Y_RANGE = (-1.25, 1.25)
 OSCILLATOR_X_AXIS_TITLE = "Time (dimensionless), t"
 OSCILLATOR_Y_AXIS_TITLE = "Displacement (dimensionless), x"
 
-
 def run_calc_slider(gamma, t_max=30.0):
     n = 300
     dt = t_max / max(n - 1, 1)

@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: topic-page-uncolored
 title: "Inspirations"
 excerpt: "Inspirations"
 permalink: /inspirations/

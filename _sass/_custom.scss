@@ -51,17 +51,19 @@ $topic-uncolored-muted: #64748b;
 $topic-uncolored-border: #e2e8f0;
 
 @include breakpoint($large) {
-  /* Use more horizontal space (theme #main is capped ~1280px) */
+  /* Topic row: flex + theme-like width (centered, padded) — same idea as pre–full-bleed layout */
   #main:has(> .sidebar.topic-sidebar) {
     display: flex;
     flex-direction: row;
     align-items: stretch;
     flex-wrap: nowrap;
+    float: none !important;
     max-width: min(96vw, 1400px);
     margin-left: auto;
     margin-right: auto;
     padding-left: 0.75rem;
     padding-right: 0.75rem;
+    box-sizing: border-box;
   }
 
   #main:has(> .sidebar.topic-sidebar) > .sidebar.topic-sidebar {
@@ -99,12 +101,81 @@ $topic-uncolored-border: #e2e8f0;
 
   #main:has(> .sidebar.topic-sidebar) > .page.topic-article {
     float: none !important;
+    clear: none !important;
     flex: 1 1 auto;
     min-width: 0;
     width: auto !important;
-    max-width: none;
-    margin-left: 0;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
     padding-left: 1.25rem !important;
+    padding-right: 0 !important;
+    /* Reset Minimal Mistakes .page Susy grid (suffix/prefix padding + float) */
+    @include span(12 of 12 last);
+    @include prefix(0 of 12);
+    @include suffix(0 of 12);
+  }
+
+  /* Author / links sidebar (Minimal Mistakes) to the left of topic TOC + article */
+  #main:has(> .sidebar.topic-sidebar) > .sidebar:not(.topic-sidebar) {
+    float: none !important;
+    clear: none !important;
+    flex: 0 0 17%;
+    min-width: 10.5rem;
+    max-width: 15rem;
+    width: auto !important;
+    margin-bottom: 0;
+    margin-right: 0 !important;
+    align-self: flex-start;
+    position: sticky;
+    top: 5.5rem;
+    max-height: calc(100vh - 6rem);
+    overflow-x: hidden;
+    overflow-y: auto;
+    opacity: 1 !important;
+  }
+
+  /* TOC on the right (e.g. physika.md with toc_right: true): two columns only — reverse [TOC, article] */
+  #main.topic-main--toc-right:has(> .sidebar.topic-sidebar):not(:has(> .sidebar:not(.topic-sidebar))) {
+    flex-direction: row-reverse;
+  }
+
+  /* Three columns: author | article | TOC — flex order (DOM is author, TOC, article) */
+  #main.topic-main--toc-right:has(> .sidebar.topic-sidebar):has(> .sidebar:not(.topic-sidebar)) {
+    flex-direction: row;
+  }
+
+  #main.topic-main--toc-right:has(> .sidebar.topic-sidebar):has(> .sidebar:not(.topic-sidebar)) > .sidebar:not(.topic-sidebar) {
+    order: 0;
+  }
+
+  #main.topic-main--toc-right:has(> .sidebar.topic-sidebar):has(> .sidebar:not(.topic-sidebar)) > .page.topic-article {
+    order: 1;
+  }
+
+  #main.topic-main--toc-right:has(> .sidebar.topic-sidebar):has(> .sidebar:not(.topic-sidebar)) > .sidebar.topic-sidebar {
+    order: 2;
+  }
+
+  #main.topic-main--toc-right:has(> .sidebar.topic-sidebar) > .sidebar.topic-sidebar {
+    border-right: 0;
+    border-left: 1px solid $topic-nav-border;
+  }
+
+  #main.topic-main--toc-right:has(> .sidebar.topic-sidebar) > .sidebar.topic-sidebar.topic-sidebar--uncolored {
+    border-right: 0;
+    border-left: 1px solid $topic-uncolored-border;
+  }
+
+  /* Breathing room between article column and right TOC (matches earlier topic layout) */
+  #main.topic-main--toc-right:has(> .sidebar.topic-sidebar):not(:has(> .sidebar:not(.topic-sidebar))) > .page.topic-article {
+    padding-left: 0 !important;
+    padding-right: 1.25rem !important;
+  }
+
+  #main.topic-main--toc-right:has(> .sidebar.topic-sidebar):has(> .sidebar:not(.topic-sidebar)) > .page.topic-article {
+    padding-left: 0.75rem !important;
+    padding-right: 1.25rem !important;
   }
 }
 
@@ -297,6 +368,11 @@ $topic-code-body-text: #e6e6e6;
 
   p {
     margin: 0.65rem 0 1rem;
+  }
+
+  /* Numbered equation rows (sk/components/eqs.html): space below without <br /> */
+  .sk-eqs-row {
+    margin-bottom: 0.65rem;
   }
 
   h2 {
@@ -631,12 +707,68 @@ $topic-code-body-text: #e6e6e6;
 
   /* Pyodide + Plotly demos on learning/physics/ */
   .physics-demos {
-    max-width: 520px;
+    max-width: min(100%, 48rem);
   }
 
-  .physics-slider-label {
+  /* One tight group: [formula + plot + stacked sliders] | [beside] — inline-flex shrink-wraps so beside stays next to plot */
+  .physics-plot-aligned {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .physics-plot-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    flex: 0 1 auto;
+    width: 35rem;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .physics-plot-aligned > .physics-controls-beside {
+    flex: 0 0 auto;
+    width: 7.5rem;
+    align-self: center;
+  }
+
+  /* Equation above each interactive plot (MathJax: \\[ ... \\] inside) */
+  .physics-plot-formula {
+    font-size: 0.92rem;
+    text-align: center;
+    line-height: 1.45;
+    color: #1a1a1a;
+  }
+
+  /* Stacked horizontal sliders below plot (same width as plot column) */
+  .physics-slider-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .physics-slider-row {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.35rem;
+    box-sizing: border-box;
+  }
+
+  /* Title + current value on one line; range input below */
+  .physics-slider-caption {
     font-size: 0.9rem;
-    display: block;
+    line-height: 1.4;
+    color: #1a1a1a;
+    text-align: center;
+    width: 100%;
   }
 
   .physics-val {
@@ -646,7 +778,40 @@ $topic-code-body-text: #e6e6e6;
 
   .physics-hslider {
     width: 100%;
-    margin-top: 0.35rem;
+    margin-top: 0;
+  }
+
+  .physics-controls-beside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0 0.35rem 0.15rem;
+    box-sizing: border-box;
+  }
+
+  .physics-value-readout {
+    font-size: 0.9rem;
+    line-height: 1.35;
+  }
+
+  @media (max-width: 36rem) {
+    .physics-plot-aligned {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      width: 100%;
+    }
+
+    .physics-plot-column {
+      width: 100%;
+    }
+
+    .physics-plot-aligned > .physics-controls-beside {
+      width: 100%;
+      align-self: stretch;
+      padding-left: 0;
+    }
   }
 
   .physics-plot-row {
@@ -657,7 +822,6 @@ $topic-code-body-text: #e6e6e6;
   }
 
   .physics-plot-frame {
-    flex: 1;
     min-width: 0;
     border: 1px solid #e2e8f0;
     border-radius: 8px;
@@ -669,40 +833,24 @@ $topic-code-body-text: #e6e6e6;
     width: 100%;
   }
 
-  .physics-vslider {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-shrink: 0;
-    width: 2.75rem;
-  }
-
-  .physics-vslider-cap {
-    font-size: 0.7rem;
-    color: #555;
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-  }
-
-  .physics-vslider-track {
-    height: 200px;
-    display: flex;
-    align-items: center;
-  }
-
-  .physics-vslider input[type='range'] {
-    width: 200px;
-    height: 26px;
-    transform: rotate(-90deg);
-    transform-origin: center;
-  }
-
   .physics-wf-radios {
     margin-bottom: 0.5rem;
 
     label {
       font-size: 0.9rem;
       margin-right: 1rem;
+    }
+  }
+
+  .physics-controls-beside .physics-wf-radios {
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+
+    label {
+      margin-right: 0;
     }
   }
 

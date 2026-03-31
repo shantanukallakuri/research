@@ -14,7 +14,9 @@ layout: default
   {% endunless %}
 {% endif %}
 
-<div id="main" role="main">
+<div id="main" role="main"{% if page.toc %}{% unless page.toc_right == false %} class="topic-main--toc-right"{% endunless %}{% endif %}>
+
+{% include sidebar.html %}
 
 {% if page.toc %}
 <div class="sidebar sticky topic-sidebar topic-sidebar--uncolored">

@@ -1,0 +1,161 @@
+---
+title: "Damped oscillator (phase space)"
+format: html
+execute:
+  echo: true
+---
+
+```{python}
+import numpy as np
+import plotly.graph_objects as go
+import plotly.io as pio
+from IPython.display import HTML
+
+# Normalized underdamped oscillator: q'' + 2γ q' + ω0² q = 0 with ω0=1, 0 < γ < 1
+# q(t) = e^{-γ t} cos(ωd t),  ωd = sqrt(1 - γ²)
+gamma = 0.15
+omega_d = float(np.sqrt(1.0 - gamma**2))
+n = 300
+t = np.linspace(0, 35, n)
+q = np.exp(-gamma * t) * np.cos(omega_d * t)
+v = (
+    -gamma * np.exp(-gamma * t) * np.cos(omega_d * t)
+    - omega_d * np.exp(-gamma * t) * np.sin(omega_d * t)
+)
+
+# Phase space: x = position q, y = velocity dq/dt (same t-grid; sliders pick indices independently)
+pad = 0.08
+q_rng = float(np.max(np.abs(q)) * (1 + pad))
+v_rng = float(np.max(np.abs(v)) * (1 + pad))
+rng = max(q_rng, v_rng, 0.05)
+
+fig = go.Figure(
+    data=[
+        go.Scatter(
+            x=q,
+            y=v,
+            mode="lines",
+            line=dict(color="#94a3b8", width=2),
+            name="Trajectory (q, ẋ)",
+            hovertemplate="q=%{x:.4f}<br>ẋ=%{y:.4f}<extra></extra>",
+        ),
+        go.Scatter(
+            x=[q[0]],
+            y=[v[0]],
+            mode="markers",
+            marker=dict(size=12, color="#e11d48"),
+            name="Current point",
+        ),
+    ]
+)
+fig.update_layout(
+    title=f"Damped oscillator (γ={gamma:.2f}) | q={q[0]:.4f}, ẋ={v[0]:.4f}",
+    xaxis_title="Position q(t)",
+    yaxis_title="Velocity ẋ(t)",
+    xaxis=dict(range=[-rng, rng], zeroline=True),
+    yaxis=dict(range=[-rng, rng], zeroline=True, scaleanchor="x", scaleratio=1),
+    template="plotly_white",
+    margin=dict(l=40, r=20, t=60, b=40),
+    showlegend=True,
+    legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+)
+
+plot_html = pio.to_html(fig, include_plotlyjs="cdn", full_html=False, div_id="xy-plot")
+x_json = np.asarray(q).tolist()
+y_json = np.asarray(v).tolist()
+
+html = f"""
+<div>
+  {plot_html}
+</div>
+
+<div style="margin-top: 12px; display: grid; gap: 10px; max-width: 760px;">
+  <div style="font-size:0.92rem; color:#444;">
+    Underdamped phase space: horizontal axis = <b>q</b>, vertical axis = <b>ẋ</b>.
+    Each slider advances along the time samples for <b>q</b> vs <b>ẋ</b> independently (when indices match, the point lies on the spiral).
+  </div>
+  <div>
+    <b>X ticker</b> (position <code>q</code>) &nbsp;
+    <button id="x-play" type="button">Play X</button>
+    <button id="x-pause" type="button">Pause X</button>
+    &nbsp; index: <span id="x-idx">0</span>
+    <input id="x-slider" type="range" min="0" max="{n-1}" step="1" value="0" style="width:100%; margin-top:6px;">
+  </div>
+  <div>
+    <b>Y ticker</b> (velocity <code>ẋ</code>) &nbsp;
+    <button id="y-play" type="button">Play Y</button>
+    <button id="y-pause" type="button">Pause Y</button>
+    &nbsp; index: <span id="y-idx">0</span>
+    <input id="y-slider" type="range" min="0" max="{n-1}" step="1" value="0" style="width:100%; margin-top:6px;">
+  </div>
+</div>
+
+<script>
+  const X = {x_json};
+  const Y = {y_json};
+  let ix = 0;
+  let iy = 0;
+  let xTimer = null;
+  let yTimer = null;
+
+  const xSlider = document.getElementById("x-slider");
+  const ySlider = document.getElementById("y-slider");
+  const xIdx = document.getElementById("x-idx");
+  const yIdx = document.getElementById("y-idx");
+  const div = document.getElementById("xy-plot");
+
+  function redraw() {{
+    Plotly.restyle(div, {{ x: [[X[ix]]], y: [[Y[iy]]] }}, [1]);
+    Plotly.relayout(div, {{
+      title: `Damped oscillator | q=${{X[ix].toFixed(4)}}, ẋ=${{Y[iy].toFixed(4)}}`
+    }});
+    xIdx.textContent = String(ix);
+    yIdx.textContent = String(iy);
+  }}
+
+  xSlider.addEventListener("input", function() {{
+    ix = parseInt(this.value, 10);
+    redraw();
+  }});
+
+  ySlider.addEventListener("input", function() {{
+    iy = parseInt(this.value, 10);
+    redraw();
+  }});
+
+  document.getElementById("x-play").addEventListener("click", function() {{
+    if (xTimer) return;
+    xTimer = setInterval(function() {{
+      ix = (ix + 1) % X.length;
+      xSlider.value = String(ix);
+      redraw();
+    }}, 40);
+  }});
+
+  document.getElementById("x-pause").addEventListener("click", function() {{
+    if (!xTimer) return;
+    clearInterval(xTimer);
+    xTimer = null;
+  }});
+
+  document.getElementById("y-play").addEventListener("click", function() {{
+    if (yTimer) return;
+    yTimer = setInterval(function() {{
+      iy = (iy + 1) % Y.length;
+      ySlider.value = String(iy);
+      redraw();
+    }}, 40);
+  }});
+
+  document.getElementById("y-pause").addEventListener("click", function() {{
+    if (!yTimer) return;
+    clearInterval(yTimer);
+    yTimer = null;
+  }});
+
+  redraw();
+</script>
+"""
+
+HTML(html)
+```

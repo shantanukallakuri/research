@@ -46,12 +46,8 @@ As shown in [eq. 1.1](#eq-1.1), the energy scales as $$\tfrac{1}{n^2}$$.
 
 <details class="topic-code-fold">
   <summary>Code</summary>
-  <pre><code class="language-python">import math
-
-def run_calc_slider(gamma):
-    n = 300
-    t = [i * 0.1 for i in range(n)]
-    return t
+  <pre><code class="language-python"># Python: assets/py/oscillator_slider.py, assets/py/hydrogen.py
+# Browser glue: assets/js/learning-physics.js (Pyodide + Plotly)
 </code></pre>
 </details>
 
@@ -86,7 +82,6 @@ oninput="document.getElementById('slider-gammaVal').textContent=parseFloat(this.
 <div id="slider-pyout" style="font-size:0.85rem; color:#555; margin-top:0.5rem;">Loading Python runtime...</div>
 <div id="slider-debug" style="font-size:0.8rem; color:red; margin-top:0.5rem;"></div>
 </div>
-<script src="/assets/js/oscillator-slider.js"></script>
 
 Hydrogen Atom Wave Functions
 <div class="demo-section">
@@ -119,7 +114,14 @@ oninput="wfOnL(this.value)">
 <div id="wf-pyout" style="font-size:0.85rem; color:#555; margin-top:0.5rem;">Loading Python runtime...</div>
 <div id="wf-debug" style="font-size:0.8rem; color:red; margin-top:0.3rem;"></div>
 </div>
-<script src="/assets/js/hydrogen.js"></script>
+
+<script>
+  window.__PHYSICS_PY_URLS__ = [
+    "{{ '/assets/py/oscillator_slider.py' | relative_url }}",
+    "{{ '/assets/py/hydrogen.py' | relative_url }}"
+  ];
+</script>
+<script src="{{ '/assets/js/learning-physics.js' | relative_url }}"></script>
 </div>
 
 ### 1.1 Hydrogen

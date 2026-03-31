@@ -1,7 +1,7 @@
 ---
-title: "Learning"
+title: "Physika"
 layout: topic-page-uncolored
-permalink: /learning/
+permalink: /physika/
 author_profile: false
 toc: true
 toc_label: "Contents"
@@ -15,6 +15,8 @@ excerpt: "Introductory physics notes — structure, demos, and math."
 {% include sk/head/pyodide_head.html %}
 <div class="learning-quarto" markdown="1">
 
+This page is meant to be a comprehensive treatment of all the physics I have learnt and been learning. It will cover areas of mechanics, quantum mechanics, optics, photonics, electromagnetics, field theory, and gravity. I will try to make this as comprehensive and all-encompassing in as cohesive a flow as possible, stating from basic fundamentals. It will not be physically possible to cover every topic in the realm of physics of course, but the goal is to cover enough that one can venture to learn more in depth once these fundamentals are understood. I will include references where applicable and write the code/simulation/plots myself for my own learning and easy elucidation. Thanks for your patience, let's begin! 
+
 ## 1. Atomic beginnings
 ---
 ### 1.1 Hydrogen
@@ -27,12 +29,14 @@ The hydrogen atom: electron $$\color{blue}{-e}$$, proton $$\color{blue}{+e}$$, C
   num="1.1"
   leader="....."
 %}
+
 {% include sk/components/eqs.html
   id="eq-1.2"
   eq="\color{blue}V(r) = -\tfrac{e^2}{4\pi\epsilon_0 r}"
   num="1.2"
   leader="....."
 %}
+
 {% include sk/components/eqs.html
   id="eq-1.3"
   eq="\color{blue}E_n = -\tfrac{13.6\text{ eV}}{n^2}"

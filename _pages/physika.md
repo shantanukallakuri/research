@@ -15,7 +15,7 @@ excerpt: "Introductory physics notes — structure, demos, and math."
 {% include sk/head/pyodide_head.html %}
 <div class="learning-quarto" markdown="1">
 
-This page is meant to be a comprehensive treatment of all the physics I have learnt and been learning. It will cover areas of mechanics, quantum mechanics, optics, photonics, electromagnetics, field theory, and gravity. I will try to make this as comprehensive and all-encompassing in as cohesive a flow as possible, stating from basic fundamentals. It will not be physically possible to cover every topic in the realm of physics of course, but the goal is to cover enough that one can venture to learn more in depth once these fundamentals are understood. I will include references where applicable and write the code/simulation/plots myself for my own learning and easy elucidation. Thanks for your patience, let's begin! 
+This page is meant to be a comprehensive treatment of all the physics I have learnt and been learning. It will cover areas of mechanics, quantum mechanics, optics, photonics, electromagnetics, field theory, and gravity. I will try to make this as comprehensive and all-encompassing in as cohesive a flow as possible, stating from basic fundamentals. It will not be physically possible to cover every topic in the realm of physics of course, but the goal is to cover enough that one can venture to learn more in depth once these fundamentals are understood. I will include references where applicable and write the code, simulations, and plots myself for my own learning and easy elucidation. Thanks for your patience, let's begin! 
 
 ## 1. Atomic beginnings
 ---
@@ -49,12 +49,12 @@ Energy scales as $$1/n^2$$ ([eq. 1.1](#eq-1.1)).
 <details class="topic-code-fold">
   <summary>Code</summary>
   {% highlight python %}
-import math
-OSCILLATOR_X_RANGE = (0.0, 60.0)
-OSCILLATOR_Y_RANGE = (-1.25, 1.25)
-OSCILLATOR_X_AXIS_TITLE = "Time (dimensionless), t"
-OSCILLATOR_Y_AXIS_TITLE = "Displacement (dimensionless), x"
-def run_calc_slider(gamma, t_max=30.0):
+  import math
+  OSCILLATOR_X_RANGE = (0.0, 60.0)
+  OSCILLATOR_Y_RANGE = (-1.25, 1.25)
+  OSCILLATOR_X_AXIS_TITLE = "Time (dimensionless), t"
+  OSCILLATOR_Y_AXIS_TITLE = "Displacement (dimensionless), x"
+  def run_calc_slider(gamma, t_max=30.0):
     n = 300
     dt = t_max / max(n - 1, 1)
     t = [i * dt for i in range(n)]
@@ -74,19 +74,17 @@ def run_calc_slider(gamma, t_max=30.0):
 
 {% include sk/components/eqs.html
   id="eq-1.4"
-  eq="\psi_{n\ell m} = R_{n\ell}(r)\,Y_\ell^m(\theta,\phi)"
+  eq="\color{blue}\psi_{n\ell m} = R_{n\ell}(r)\,Y_\ell^m(\theta,\phi)"
   num="1.4"
   leader="....."
 %}
 
 {% include sk/components/eqs.html
   id="eq-1.5"
-  eq="\left[ -\tfrac{\hbar^2}{2m_e}\nabla^2 + V(r) \right] \psi = E\psi"
+  eq="\color{blue}\left[ -\tfrac{\hbar^2}{2m_e}\nabla^2 + V(r) \right] \psi = E\psi"
   num="1.5"
   leader="....."
 %}
-
-**Note:** Sliders adjust **parameters** (\(\gamma\), \(t_{\mathrm{end}}\), \(n\), \(\ell\)). The **plots** graph **coordinates** (\(t,x\); \(r\); \(x,z\)) — so axis labels use \(t,x,r,\ldots\), not the slider symbols. Edit axis text/ranges in the `.py` files.
 
 #### Damped oscillator
 

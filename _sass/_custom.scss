@@ -235,18 +235,20 @@ $topic-uncolored-border: #e2e8f0;
  */
 
 /* Topic headings: h2 = darker peach; h3 = lighter peach (former code fills) */
-$topic-section-bg: #edd5c8;
+$topic-section-bg: #c6f6c6;
 $topic-section-text: #2a2a2a;
-$topic-section-border: #d4beb0;
+$topic-section-border: #7ccf7c;
 
-$topic-subsection-bg: #f5ebe4;
+$topic-subsection-bg: #e8fbe8;
 $topic-subsection-text: #1e1e1e;
-$topic-subsection-border: #e0d0c4;
+$topic-subsection-border: #bfeebf;
 
 /* Code (details summary + pre, Rouge): former subsection grey — both same fill */
 $topic-code-bg: #e8e8e8;
 $topic-code-text: #222;
 $topic-code-border: #d0d0d0;
+$topic-code-body-bg: #000000;
+$topic-code-body-text: #e6e6e6;
 
 %topic-section-heading {
   color: $topic-section-text;
@@ -334,18 +336,170 @@ $topic-code-border: #d0d0d0;
   /* Rouge / fenced code blocks — same light grey as subsection fill */
   div.highlighter-rouge,
   figure.highlight {
-    background-color: $topic-code-bg !important;
+    background-color: $topic-code-body-bg !important;
     border-color: $topic-code-border !important;
-    color: $topic-code-text;
 
     &:before {
+      /* The FontAwesome “code” corner chip is a title decoration */
       background-color: $topic-code-bg;
       color: $topic-code-text;
     }
 
+    /* VS Code Dark (Visual Studio) token colors (mapped from Rouge classes) */
     .highlight {
-      color: $topic-code-text;
+      color: #d4d4d4;
     }
+
+    .highlight .c,
+    .highlight .cm,
+    .highlight .c1,
+    .highlight .cp,
+    .highlight .cpf,
+    .highlight .cs {
+      color: #6a9955 !important;
+      font-style: italic;
+    }
+
+    .highlight .k,
+    .highlight .kc,
+    .highlight .kd,
+    .highlight .kn,
+    .highlight .kp,
+    .highlight .kr,
+    .highlight .kt,
+    .highlight .ow,
+    .highlight .nb {
+      color: #569cd6 !important;
+      font-weight: bold;
+    }
+
+    .highlight .o,
+    .highlight .p {
+      color: #d4d4d4 !important;
+      font-weight: bold;
+    }
+
+    .highlight .s,
+    .highlight .sa,
+    .highlight .sb,
+    .highlight .sc,
+    .highlight .sd,
+    .highlight .s2,
+    .highlight .se,
+    .highlight .sh,
+    .highlight .si,
+    .highlight .sx,
+    .highlight .sr,
+    .highlight .s1,
+    .highlight .ss {
+      color: #ce9178 !important;
+    }
+
+    .highlight .m,
+    .highlight .mb,
+    .highlight .mf,
+    .highlight .mh,
+    .highlight .mi,
+    .highlight .mo,
+    .highlight .il {
+      color: #b5cea8 !important;
+      font-weight: bold;
+    }
+
+    .highlight .nf,
+    .highlight .na,
+    .highlight .nv,
+    .highlight .nt,
+    .highlight .vc,
+    .highlight .vg,
+    .highlight .vi {
+      color: #9cdcfe !important;
+    }
+  }
+
+  /* VS Code Dark (Visual Studio) token colors for any Rouge-generated block.
+     This is intentionally not tied to container class (div.highlighter-rouge / figure.highlight),
+     because different Rouge/Jekyll output shapes use different wrappers. */
+  .highlight {
+    color: #d4d4d4;
+  }
+  .highlight .c,
+  .highlight .cm,
+  .highlight .c1,
+  .highlight .cp,
+  .highlight .cpf,
+  .highlight .cs {
+    color: #6a9955 !important;
+    font-style: italic;
+  }
+
+  .highlight .k,
+  .highlight .kc,
+  .highlight .kd,
+  .highlight .kn,
+  .highlight .kp,
+  .highlight .kr,
+  .highlight .kt,
+  .highlight .ow,
+  .highlight .nb {
+    color: #569cd6 !important;
+    font-weight: bold;
+  }
+
+  .highlight .o,
+  .highlight .p {
+    color: #d4d4d4 !important;
+    font-weight: bold;
+  }
+
+  .highlight .s,
+  .highlight .sa,
+  .highlight .sb,
+  .highlight .sc,
+  .highlight .sd,
+  .highlight .s2,
+  .highlight .se,
+  .highlight .sh,
+  .highlight .si,
+  .highlight .sx,
+  .highlight .sr,
+  .highlight .s1,
+  .highlight .ss {
+    color: #ce9178 !important;
+  }
+
+  .highlight .m,
+  .highlight .mb,
+  .highlight .mf,
+  .highlight .mh,
+  .highlight .mi,
+  .highlight .mo,
+  .highlight .il {
+    color: #b5cea8 !important;
+    font-weight: bold;
+  }
+
+  .highlight .nf,
+  .highlight .na,
+  .highlight .nv,
+  .highlight .nt,
+  .highlight .vc,
+  .highlight .vg,
+  .highlight .vi {
+    color: #9cdcfe !important;
+  }
+
+  /* Any remaining “plain” text tokens that Rouge leaves as generic names/text:
+     make them light so they’re visible on the black background. */
+  .highlight .n,
+  .highlight .nn,
+  .highlight .nx,
+  .highlight .nc,
+  .highlight .no,
+  .highlight .x,
+  .highlight .g,
+  .highlight .w {
+    color: #d4d4d4 !important;
   }
 
   hr {
@@ -450,8 +604,8 @@ $topic-code-border: #d0d0d0;
     pre {
       margin: 0;
       padding: 0.85rem 1rem;
-      background: $topic-code-bg;
-      color: $topic-code-text;
+      background: $topic-code-body-bg;
+      color: $topic-code-body-text;
       font-family: $monospace;
       font-size: $type-size-syntax;
       line-height: 1.65;

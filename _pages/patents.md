@@ -15,7 +15,8 @@ toc_sticky: true
 
 {% include base_path %}
 
-{% for post in site.patents reversed %}
+{% assign patent_pages = site.pages | where: "patent", true | sort: "date" %}
+{% for post in patent_pages reversed %}
   {% include archive-single.html %}
 {% endfor %}
 

@@ -156,6 +156,8 @@ exclude:
   - vendor
   - data/qmd/
   - data/html/
+  - private-notes
+  - markdown_generator
 keep_files:
   - .git
   - .svn
@@ -185,16 +187,10 @@ kramdown:
 
 # Collections
 collections:
-  publications:
-    output: true
-    permalink: /:collection/:path/
   research:
     output: true
     permalink: /:collection/:path/
   talks:
-    output: true
-    permalink: /:collection/:path/
-  patents:
     output: true
     permalink: /:collection/:path/
 
@@ -228,18 +224,18 @@ defaults:
       author_profile: true
       share: true
       comments: true
-  # _patents
+  # Individual patent entries (_pages/patents/*.md, not _pages/patents.md)
   - scope:
-      path: ""
-      type: patents
+      path: "_pages/patents"
+      type: pages
     values:
       layout: single
       author_profile: true
       share: true
-  # _publications
+  # Individual publication entries (_pages/publications/*.md, not _pages/publications.md)
   - scope:
-      path: ""
-      type: publications
+      path: "_pages/publications"
+      type: pages
     values:
       layout: single
       author_profile: true

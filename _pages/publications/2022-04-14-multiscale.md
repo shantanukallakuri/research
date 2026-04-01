@@ -1,6 +1,6 @@
 ---
 title: "Multiscale hierarchical structures from a nanocluster mesophase"
-collection: publications
+publication: true
 permalink: /publication/2022-multiscale
 date: 2022-04-14
 venue: 'Nature Materials'

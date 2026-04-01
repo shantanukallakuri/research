@@ -5,3 +5,5 @@ images/posts/*.sty
 _source/*_cache
 .Rproj.user
 private-notes/
+# Local Quarto / generator output (also excluded from Jekyll in _config.yml)
+markdown_generator/

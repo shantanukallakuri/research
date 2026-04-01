@@ -52,7 +52,13 @@ pyReady.then(function () {
   if (nr) wfClampLForN(document.getElementById("wf-lInput-rad"), document.getElementById("wf-lVal-rad"), parseInt(nr.value, 10));
   var no = document.getElementById("wf-nInput-orb");
   if (no) wfClampLForN(document.getElementById("wf-lInput-orb"), document.getElementById("wf-lVal-orb"), parseInt(no.value, 10));
+  var bo = document.getElementById("bohr-pyout");
+  if (bo) {
+    bo.textContent = "Ready.";
+    bohrRunCalc();
+  }
 });
+
 
 var debouncedSliderRun = debounce(sliderRunCalc, 80);
 var debouncedWfRun = debounce(wfRunCalc, 80);
@@ -62,6 +68,45 @@ window.sliderDebouncePlot = function () {
 window.wfDebouncePlot = function () {
   debouncedWfRun();
 };
+
+var debouncedBohrRun = debounce(bohrRunCalc, 80);
+window.bohrDebouncePlot = function () {
+  debouncedBohrRun();
+};
+
+async function bohrRunCalc() {
+  var dbg = document.getElementById("bohr-debug");
+  var out = document.getElementById("bohr-pyout");
+  var plotEl = document.getElementById("bohr-pyplot");
+  if (!out || !plotEl) return;
+  try {
+    var py = await pyReady;
+    var nmax = parseInt(document.getElementById("bohr-nmaxInput").value, 10);
+    var res = await py.runPythonAsync("run_bohr_plot(" + nmax + ")");
+    var c = res.toJs();
+    res.destroy?.();
+    var xR = Array.from(c[4]);
+    var yR = Array.from(c[5]);
+    Plotly.react(
+      "bohr-pyplot",
+      [{ x: c[0], y: c[1], name: "E_n", type: "scatter", mode: "lines+markers", line: { color: "#0077cc" } }],
+      physLayout({
+        title: "",
+        margin: { t: 12, l: 52, r: 12, b: 48 },
+        xaxis: { title: String(c[6]), range: xR, autorange: false },
+        yaxis: { title: String(c[7]), range: yR, autorange: false },
+      }),
+      PHYS_PLOTLY_CONFIG
+    );
+    var Ey = c[1];
+    var eLast = Ey[Ey.length - 1];
+    out.textContent =
+      "n_max=" + nmax + "   E(" + nmax + ")=" + eLast.toFixed(3) + " eV";
+    if (dbg) dbg.textContent = "";
+  } catch (e) {
+    if (dbg) dbg.textContent = e.message;
+  }
+}
 
 async function sliderRunCalc() {
   var dbg = document.getElementById("slider-debug");

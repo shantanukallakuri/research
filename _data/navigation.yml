@@ -6,6 +6,9 @@ main:
   - title: "research"
     url: /research/
     
+  - title: "physika"
+    url: /physika/
+    
   - title: "pub./conf.  "
     url: /publications/
 
@@ -15,9 +18,6 @@ main:
   - title: "teaching"
     url: /teaching/
 
-  - title: "physika"
-    url: /physika/
-
   - title: "blog"
     url: /blog/
     
@@ -26,3 +26,6 @@ main:
 
   - title: "inspirations"
     url: /inspirations/
+
+  - title: "gallery"
+    url: /gallery/

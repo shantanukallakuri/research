@@ -27,9 +27,9 @@
     {% endif %}
 
     <h2 class="archive__item-title" itemprop="headline">
-      {% if post.collection == 'publications' %}
+      {% if post.collection == 'publications' or post.publication %}
         {{ title }}
-      {% elsif post.collection == 'patents' %}
+      {% elsif post.collection == 'patents' or post.patent %}
         {{ title }}
       {% elsif post.link %}
         <a href="{{ post.link }}">{{ title }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
@@ -45,7 +45,7 @@
 
     {% if post.collection == 'teaching' %}
       <p> {{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
-    {% elsif post.collection == 'publications' %}
+    {% elsif post.collection == 'publications' or post.publication %}
       {% if post.abstract %}
         <details><summary>Abstract</summary>
         <blockquote>
@@ -78,7 +78,7 @@
         <a href="{{ post.supplemental }}"><i class="fas fa-fw fa-file-alt zoom" aria-hidden="true"></i></a>
       {% endif %}
       </p>
-    {% elsif post.collection == 'patents' %}
+    {% elsif post.collection == 'patents' or post.patent %}
       {% if post.abstract %}
         <details><summary>Abstract</summary>
         <blockquote>

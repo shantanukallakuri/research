@@ -1,6 +1,6 @@
 ---
 title: "Motion-based immunological detection of Zika virus using Pt-nanomotors and a cellphone"
-collection: publications
+publication: true
 permalink: /publication/2018-nanomotors
 date: 2018-05-16
 venue: 'ACS Nano'

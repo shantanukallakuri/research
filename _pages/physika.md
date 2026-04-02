@@ -15,7 +15,7 @@ excerpt: "Introductory physics notes — structure, demos, and math."
 {% include sk/head/pyodide_head.html %}
 <div class="learning-quarto" markdown="1">
 
-This page is meant to be a comprehensive consolidation of the physics I have learnt and have been learning. It will cover areas of mechanics, quantum mechanics, optics, photonics, electromagnetics, field theory, relativity, and gravity as well as learnings from other disciplines depending on the relevance. We will try to blur these disciplinary boundaries here, and embrace a more open approach in a simple, cohesive, manner starting from basic fundamentals. It is physically impossible to cover every topic in the realm of science of course, but the goal is to serve as a personal repository as well as to cover enough that one can venture into more depth once these fundamentals are understood. I will include references where applicable and write code, simulations, and plots for easy elucidation and my own learning. Thank you for your patience, let's begin! :)
+This page is meant to be a comprehensive consolidation of the science I have been learning. It will cover areas of mechanics, quantum mechanics, optics, photonics, electromagnetics, field theory, relativity, and gravity as well as learnings from other disciplines depending on the relevance. We will try to blur these disciplinary boundaries here, and integrate/relate things as much as possible while embracing a more simple, open, cohesive approach starting from basic fundamentals. It is physically impossible to cover every topic in the realm of science of course, but the goal is to serve as a personal repository as well as to cover enough that one can venture into more depth once these fundamentals are understood. I will include references where applicable and write code, simulations, and plots for easy elucidation and my own learning. Thank you for your patience, let's begin! :)
 
 ## 1. Atomic beginnings
 ---
@@ -28,12 +28,8 @@ This page is meant to be a comprehensive consolidation of the physics I have lea
 {% include_relative physika/_fragments/atomic/03-damped-oscillator.md %}
 {% include_relative physika/_fragments/atomic/04-hydrogen-demos.md %}
 
-<script>
-  window.__PHYSICS_PY_URLS__ = [
-    "{{ '/assets/physika/atomic/oscillator_slider.py' | relative_url }}",
-    "{{ '/assets/physika/atomic/hydrogen.py' | relative_url }}",
-    "{{ '/assets/physika/atomic/bohr_model.py' | relative_url }}",
-  ];
-</script>
-<script src="{{ '/assets/js/learning-physics.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/physika/physika-runtime.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/physika/demo-bohr.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/physika/demo-oscillator.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/physika/demo-hydrogen.js' | relative_url }}"></script>
 </div>

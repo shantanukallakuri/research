@@ -1,4 +1,4 @@
-#### Damped oscillator
+### 2.1 Damped oscillator
 
 <div class="demo-section physics-demos">
 <div class="physics-plot-aligned">
